@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blueprint: Multi-Level Menu</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- demo styles -->
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<!-- menu styles -->
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<link rel="stylesheet" type="text/css" href="css/switch.css" />
+	<script src="js/modernizr-custom.js"></script>
+</head>
+
+<body>
+	<!-- Main container -->
+		<!-- Blueprint header -->
+		<header class="bp-header cf">
+			<div class="bp-header__main">
+				<span class="bp-header__present">VAMA</span>
+				<h1 class="bp-header__title">Appliance Menu</h1>
+			</div>
+		</header>
+		<!-- <p class="info">Connect a device</p> -->
+
+		<div class="w3-container">
+			<table class="w3-table w3-blue">
+			  <tr>
+				<td>
+					<div class="toggle-wrapper">
+						<div class="toggle normal"><input id="normal" type="checkbox" /><label class="toggle-item" for="normal"></label></div>
+						<div class="name">Appliance 1</div>
+					</div>
+				</td>
+				<td>
+					<div class="toggle-wrapper">
+						<div class="toggle normal2"><input id="normal" type="checkbox" /><label class="toggle-item" for="normal2"></label></div>
+						<div class="name">Appliance 2</div>
+					</div>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+					<div class="toggle-wrapper">
+						<div class="toggle normal3"><input id="normal" type="checkbox" /><label class="toggle-item" for="normal3"></label></div>
+						<div class="name">Appliance 3</div>
+					</div>
+				</td>
+				<td>
+					<div class="toggle-wrapper">
+						<div class="toggle normal4"><input id="normal" type="checkbox" /><label class="toggle-item" for="normal4"></label></div>
+						<div class="name">Appliance 4</div>
+					</div>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+					<div class="toggle-wrapper">
+						<div class="toggle normal5"><input id="normal" type="checkbox" /><label class="toggle-item" for="normal5"></label></div>
+						<div class="name">Appliance 5</div>
+					</div>
+				</td>
+				<td>
+					<div class="toggle-wrapper">
+						<div class="toggle normal6"><input id="normal" type="checkbox" /><label class="toggle-item" for="normal6"></label></div>
+						<div class="name">Appliance 6</div>
+					</div>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+					<div class="toggle-wrapper">
+						<div class="toggle normal6"><input id="normal" type="checkbox" /><label class="toggle-item" for="normal6"></label></div>
+						<div class="name">Appliance 7</div>
+					</div>
+				</td>
+				<td>
+					<div class="toggle-wrapper">
+					<div class="toggle normal6"><img src="img/plus.png" alt="Addition Sign"/></div>
+						<div class="name">New Appliance</div>
+					</div>
+				</td>
+			  </tr>
+			</table>
+		  </div>
+	<!-- bottom nav-->
+	<div class="navbar">
+		<a href="appliances.php" class="active">Appliances</a>
+		<a href="stats.php">Statistics</a>
+		<a href="settings.php">Settings</a>
+	  </div>
+	<!-- /bottom nav-->
+	<!-- /Main container-->
+		
+	<!-- /view -->
+	<script src="js/classie.js"></script>
+	<script src="js/dummydata.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
