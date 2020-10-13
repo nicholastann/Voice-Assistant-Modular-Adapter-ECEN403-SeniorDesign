@@ -16,28 +16,22 @@
 </head>
 
 <body>
-	<!-- Main container -->
-		<!-- Blueprint header -->
+
 		<header class="bp-header cf">
 			<div class="bp-header__main">
 				<span class="bp-header__present">VAMA</span>
-				<h1 class="bp-header__title">Appliance Menu</h1>
+				<h1 class="bp-header__title">Settings Menu</h1>
 			</div>
 		</header>
-		<!-- <p class="info">Connect a device</p> -->
 
 		<div class="w3-container">
 		</div>
-	<!-- bottom nav-->
 	<div class="navbar">
 		<a href="appliances.php" >Appliances</a>
 		<a href="stats.php">Statistics</a>
 		<a href="settings.php" class="active">Settings</a>
 	  </div>
-	<!-- /bottom nav-->
-	<!-- /Main container-->
 		
-	<!-- /view -->
 	<script src="js/classie.js"></script>
 	<script src="js/dummydata.js"></script>
 	<script src="js/main.js"></script>

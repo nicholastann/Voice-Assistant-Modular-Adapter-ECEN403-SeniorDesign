@@ -16,15 +16,12 @@
 </head>
 
 <body>
-	<!-- Main container -->
-		<!-- Blueprint header -->
 		<header class="bp-header cf">
 			<div class="bp-header__main">
 				<span class="bp-header__present">VAMA</span>
 				<h1 class="bp-header__title">Appliance Menu</h1>
 			</div>
 		</header>
-		<!-- <p class="info">Connect a device</p> -->
 
 		<div class="w3-container">
 			<table class="w3-table w3-blue">
@@ -37,7 +34,7 @@
 				</td>
 				<td>
 					<div class="toggle-wrapper">
-						<div class="toggle normal2"><input id="normal" type="checkbox" /><label class="toggle-item" for="normal2"></label></div>
+						<div class="toggle normal2"><input id="normal2" type="checkbox" /><label class="toggle-item" for="normal2"></label></div>
 						<div class="name">Appliance 2</div>
 					</div>
 				</td>
@@ -45,13 +42,13 @@
 			  <tr>
 				<td>
 					<div class="toggle-wrapper">
-						<div class="toggle normal3"><input id="normal" type="checkbox" /><label class="toggle-item" for="normal3"></label></div>
+						<div class="toggle normal3"><input id="normal3" type="checkbox" /><label class="toggle-item" for="normal3"></label></div>
 						<div class="name">Appliance 3</div>
 					</div>
 				</td>
 				<td>
 					<div class="toggle-wrapper">
-						<div class="toggle normal4"><input id="normal" type="checkbox" /><label class="toggle-item" for="normal4"></label></div>
+						<div class="toggle normal4"><input id="normal4" type="checkbox" /><label class="toggle-item" for="normal4"></label></div>
 						<div class="name">Appliance 4</div>
 					</div>
 				</td>
@@ -59,43 +56,40 @@
 			  <tr>
 				<td>
 					<div class="toggle-wrapper">
-						<div class="toggle normal5"><input id="normal" type="checkbox" /><label class="toggle-item" for="normal5"></label></div>
+						<div class="toggle normal5"><input id="normal5" type="checkbox" /><label class="toggle-item" for="normal5"></label></div>
 						<div class="name">Appliance 5</div>
 					</div>
 				</td>
 				<td>
 					<div class="toggle-wrapper">
-						<div class="toggle normal6"><input id="normal" type="checkbox" /><label class="toggle-item" for="normal6"></label></div>
+						<div class="toggle normal6"><input id="normal6" type="checkbox" /><label class="toggle-item" for="normal6"></label></div>
 						<div class="name">Appliance 6</div>
 					</div>
 				</td>
 			  </tr>
 			  <tr>
-				<td>
+			  <td>
 					<div class="toggle-wrapper">
-						<div class="toggle normal6"><input id="normal" type="checkbox" /><label class="toggle-item" for="normal6"></label></div>
+						<div class="toggle normal7"><input id="normal7" type="checkbox" /><label class="toggle-item" for="normal7"></label></div>
 						<div class="name">Appliance 7</div>
 					</div>
 				</td>
 				<td>
 					<div class="toggle-wrapper">
-					<div class="toggle normal6"><img src="img/plus.png" alt="Addition Sign"/></div>
-						<div class="name">New Appliance</div>
+						<div class="toggle normal8"><input id="normal8" type="checkbox" /><label class="toggle-item" for="normal8"></label></div>
+						<div class="name">New</div>
 					</div>
 				</td>
 			  </tr>
 			</table>
 		  </div>
-	<!-- bottom nav-->
+
 	<div class="navbar">
 		<a href="appliances.php" class="active">Appliances</a>
 		<a href="stats.php">Statistics</a>
 		<a href="settings.php">Settings</a>
 	  </div>
-	<!-- /bottom nav-->
-	<!-- /Main container-->
-		
-	<!-- /view -->
+
 	<script src="js/classie.js"></script>
 	<script src="js/dummydata.js"></script>
 	<script src="js/main.js"></script>
