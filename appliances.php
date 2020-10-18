@@ -1,3 +1,28 @@
+<?php
+// Start the session
+session_start();
+ 
+// Include config file
+require_once "config.php";
+ 
+// Processing form data when form is submitted
+	if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+		$appliance_1_status = "SELECT status FROM appliances WHERE appliance_id = 1;"
+			
+		// Prepare an update statement
+		if ($appliance_1_status) $sql = "UPDATE appliances SET status = 0 WHERE id = 1";
+		else $sql = "UPDATE appliances SET status = 1 WHERE id = 1";
+		mysqli_stmt_execute($sql);
+		header("location: appliances.php");
+	}
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
@@ -27,10 +52,12 @@
 			<table class="w3-table w3-blue">
 			  <tr>
 				<td>
-					<div class="toggle-wrapper">
-						<div class="toggle normal"><input id="normal" type="checkbox" /><label class="toggle-item" for="normal"></label></div>
-						<div class="name">Appliance 1</div>
-					</div>
+					<form method="post" id="toggle_1">
+							<div class="toggle-wrapper">
+								<input type="submit" name="toggle" id="toggle1" class="toggle normal"><input id="normal" type="checkbox" /><label class="toggle-item" for="normal"></label></input>
+								<div class="name">Appliance 1</div>
+							</div>
+					</form>
 				</td>
 				<td>
 					<div class="toggle-wrapper">
