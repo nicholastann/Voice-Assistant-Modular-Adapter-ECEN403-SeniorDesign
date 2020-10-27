@@ -1,6 +1,6 @@
 <?php
 session_start();
-$machine_id = $_GET['appliance_id'];
+$machine_id = 1;
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ $machine_id = $_GET['appliance_id'];
   			$.ajax({
 				type: "GET",
                 url: "status.php",
-                data: {"appliance_id": <?php echo 1;?>},
+                data: {"appliance_id": <?php echo $machine_id;?>},
                 success: function (data) {
                     console.log(data)
                 }
@@ -39,7 +39,7 @@ $machine_id = $_GET['appliance_id'];
             $.ajax({
                 type: "GET",
                 url: "status.php",
-                data: {"appliance_id": <?php echo 1;?>},
+                data: {"appliance_id": <?php echo $machine_id;?>},
                 success: function (data) {
                     console.log(data)
                 }
@@ -49,22 +49,13 @@ $machine_id = $_GET['appliance_id'];
 </head>
 
 <?php
-	if (isset($_POST['form_submit'])) {//Form was submitted
+	if (isset($_POST['machine_state'])) {//Form was submitted
 		(isset($_POST['machine_state'])) ? $status = 1 : $status = 0;
 		//Update DB
 		$db = new PDO('mysql:host=us-cdbr-east-02.cleardb.com:3306;dbname=heroku_9cfa0e39f4cc915;charset=utf8mb4', 'b5cab6ba381e22', '032f36fc');
-		$update = $db->prepare("UPDATE `appliances` SET `status` = ? WHERE `appliance_id` = 1 LIMIT 1;");
-		$update->execute([$status, $1]);
-	} else {//Page was loaded
-		$status = $_SESSION['status'];
-	}
-	if ($status) {//status = 1 (on)
-		$status_str = "on";
-		$checked_status = "checked";
-	} else {
-		$status_str = "off";
-		$checked_status = "";
-	}
+		$update = $db->prepare("UPDATE `appliances` SET `status` = ? WHERE `appliance_id` = ? LIMIT 1;");
+		$update->execute([$status, $machine_id]);
+	} 
 ?>
 
 <body>
