@@ -33,8 +33,6 @@
 	  </div>
 		
 	<script src="js/classie.js"></script>
-	<script src="js/dummydata.js"></script>
-	<script src="js/main.js"></script>
 </body>
 
 </html>
