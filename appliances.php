@@ -28,10 +28,7 @@ $machine_id = 1;
   			$.ajax({
 				type: "POST",
                 url: "toggle_status.php",
-                data: {"appliance_id": <?php echo $machine_id;?>, "status": <?php echo $status;?> },
-                success: function (data) {
-                    console.log(data)
-                }
+                data: {"appliance_id": <?php echo $machine_id;?>, "status": toggle_value }, success: function (data) { console.log(data) }
   			});
 		});
 		
@@ -39,24 +36,11 @@ $machine_id = 1;
             $.ajax({
                 type: "GET",
                 url: "status.php",
-                data: {"appliance_id": <?php echo $machine_id;?>},
-                success: function (data) {
-                    console.log(data)
-                }
+                data: {"appliance_id": <?php echo $machine_id;?>}, success: function (data) { console.log(data) }
             });
         });
     </script>
 </head>
-
-<?php
-	if (isset($_POST['machine_state'])) {//Form was submitted
-		(isset($_POST['machine_state'])) ? $status = 1 : $status = 0;
-		//Update DB
-		$db = new PDO('mysql:host=us-cdbr-east-02.cleardb.com:3306;dbname=heroku_9cfa0e39f4cc915;charset=utf8mb4', 'b5cab6ba381e22', '032f36fc');
-		$update = $db->prepare("UPDATE `appliances` SET `status` = ? WHERE `appliance_id` = ? LIMIT 1;");
-		$update->execute([$status, $machine_id]);
-	} 
-?>
 
 <body>
 		<header class="bp-header cf">
