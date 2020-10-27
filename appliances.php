@@ -5,7 +5,7 @@ $machine_id = $_GET['appliance_id'];
 if (isset($_POST['form_submit'])) {//Form was submitted
     (isset($_POST['machine_state'])) ? $status = 1 : $status = 0;
     //Update DB
-    $db = new PDO('mysql:host=localhost;dbname=testing;charset=utf8mb4', 'root', '');
+    $db = new PDO('mysql:host=us-cdbr-east-02.cleardb.com:3306;dbname=heroku_9cfa0e39f4cc915;charset=utf8mb4', 'b5cab6ba381e22', '032f36fc');
     $update = $db->prepare("UPDATE `appliances` SET `status` = ? WHERE `appliance_id` = ? LIMIT 1;");
     $update->execute([$status, $machine_id]);
 } else {//Page was loaded
@@ -72,11 +72,10 @@ if ($status) {//status = 1 (on)
 				<form method="post">
                 <fieldset> 
 					<div class="toggle-wrapper">
-						<div class="toggle normal"><input id="normal" name='machine_state' type="checkbox" /><label class="toggle-item" for="normal"></label></div>
+						<div class="toggle normal"><input value="Update" type="submit" id="normal" name='machine_state' type="checkbox" /><label class="toggle-item" for="normal"></label></div>
 						<div class="name">Appliance 1</div>
 					</div>
                 </fieldset>
-                <input type="submit" name="submit" value="Update"/>
             </form>
 
 				</td>
