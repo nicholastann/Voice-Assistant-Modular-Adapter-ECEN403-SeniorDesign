@@ -71,9 +71,8 @@ if ($status) {//status = 1 (on)
 
 				<form method="post">
                 <fieldset> 
-					
 					<div class="toggle-wrapper">
-						<div class="toggle normal1"><input id="normal" name='machine_state' type="checkbox" /><label class="toggle-item" for="normal1"></label></div>
+						<div class="toggle normal"><input id="normal" name='machine_state' type="checkbox" /><label class="toggle-item" for="normal"></label></div>
 						<div class="name">Appliance 1</div>
 					</div>
                 </fieldset>
