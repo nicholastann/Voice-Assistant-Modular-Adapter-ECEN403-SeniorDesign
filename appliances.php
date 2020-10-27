@@ -1,28 +1,7 @@
 <?php
 session_start();
 $machine_id = $_GET['appliance_id'];
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>On off toggle</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $.ajax({
-                type: "GET",
-                url: "status.php",
-                data: {"appliance_id": <?php echo $machine_id;?>},
-                success: function (data) {
-                    console.log(data)
-                }
-            });
-        });
-    </script>
-</head>
-<?php
+
 if (isset($_POST['form_submit'])) {//Form was submitted
     (isset($_POST['machine_state'])) ? $status = 1 : $status = 0;
     //Update DB
@@ -61,7 +40,6 @@ if ($status) {//status = 1 (on)
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
 	<link rel="stylesheet" type="text/css" href="css/switch.css" />
 	<script src="js/modernizr-custom.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.0/flatly/bootstrap.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript">
         $(document).ready(function () {
