@@ -1,21 +1,45 @@
 <?php
-// Start the session
 session_start();
- 
-// Include config file
-require_once "config.php";
- 
-// Processing form data when form is submitted
-	if($_SERVER["REQUEST_METHOD"] == "POST"){
-
-		$appliance_1_status = "SELECT status FROM appliances WHERE appliance_id = 1;"
-			
-		// Prepare an update statement
-		if ($appliance_1_status) $sql = "UPDATE appliances SET status = 0 WHERE id = 1";
-		else $sql = "UPDATE appliances SET status = 1 WHERE id = 1";
-		mysqli_stmt_execute($sql);
-		header("location: appliances.php");
-	}
+$machine_id = $_GET['appliance_id'];
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>On off toggle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.0/flatly/bootstrap.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "status.php",
+                data: {"appliance_id": <?php echo $machine_id;?>},
+                success: function (data) {
+                    console.log(data)
+                }
+            });
+        });
+    </script>
+</head>
+<?php
+if (isset($_POST['form_submit'])) {//Form was submitted
+    (isset($_POST['machine_state'])) ? $status = 1 : $status = 0;
+    //Update DB
+    $db = new PDO('mysql:host=localhost;dbname=testing;charset=utf8mb4', 'root', '');
+    $update = $db->prepare("UPDATE `appliances` SET `status` = ? WHERE `appliance_id` = ? LIMIT 1;");
+    $update->execute([$status, $machine_id]);
+} else {//Page was loaded
+    $status = $_SESSION['status'];
+}
+if ($status) {//status = 1 (on)
+    $status_str = "on";
+    $checked_status = "checked";
+} else {
+    $status_str = "off";
+    $checked_status = "";
+}
 ?>
 
 
@@ -38,6 +62,20 @@ require_once "config.php";
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
 	<link rel="stylesheet" type="text/css" href="css/switch.css" />
 	<script src="js/modernizr-custom.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.0/flatly/bootstrap.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "status.php",
+                data: {"appliance_id": <?php echo $machine_id;?>},
+                success: function (data) {
+                    console.log(data)
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -52,12 +90,24 @@ require_once "config.php";
 			<table class="w3-table w3-blue">
 			  <tr>
 				<td>
-					<form method="post" id="toggle_1">
-							<div class="toggle-wrapper">
-								<input type="submit" name="toggle" id="toggle1" class="toggle normal"><input id="normal" type="checkbox" /><label class="toggle-item" for="normal"></label></input>
-								<div class="name">Appliance 1</div>
-							</div>
-					</form>
+					
+
+				<form method="post">
+                <fieldset>
+                    <legend>on/off status for machine: <?php echo $machine_id; ?></legend>
+                    <div class="form-group">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                   name='machine_state' <?php echo $checked_status; ?>>
+                            <label class="custom-control-label"
+                                   for="customSwitch1">Currently <?php echo $status_str; ?></label>
+                        </div>
+                        <input type="hidden" name="form_submit" value="">
+                    </div>
+                </fieldset>
+                <input type="submit" class="btn btn-info btn-sm" name="submit" value="Update"/>
+            </form>
+
 				</td>
 				<td>
 					<div class="toggle-wrapper">
