@@ -70,19 +70,14 @@ if ($status) {//status = 1 (on)
 					
 
 				<form method="post">
-                <fieldset>
-                    <legend>on/off status for machine: <?php echo $machine_id; ?></legend>
-                    <div class="form-group">
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
-                                   name='machine_state' <?php echo $checked_status; ?>>
-                            <label class="custom-control-label"
-                                   for="customSwitch1">Currently <?php echo $status_str; ?></label>
-                        </div>
-                        <input type="hidden" name="form_submit" value="">
-                    </div>
+                <fieldset> 
+					
+					<div class="toggle-wrapper">
+						<div class="toggle normal1"><input id="normal" name='machine_state' type="checkbox" /><label class="toggle-item" for="normal1"></label></div>
+						<div class="name">Appliance 1</div>
+					</div>
                 </fieldset>
-                <input type="submit" class="btn btn-info btn-sm" name="submit" value="Update"/>
+                <input type="submit" name="submit" value="Update"/>
             </form>
 
 				</td>
