@@ -20,7 +20,22 @@ $machine_id = $_GET['appliance_id'];
 	<script src="js/modernizr-custom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript">
-        $(document).ready(function () {
+        
+		$('.toggle normal').on('change', function() {
+  			var toggle_data = $(this).data('no-uniform')
+      		toggle_value = $(this).val();
+
+  			$.ajax({
+				type: "GET",
+                url: "status.php",
+                data: {"appliance_id": <?php echo $machine_id;?>},
+                success: function (data) {
+                    console.log(data)
+                }
+  			});
+		});
+		
+		$(document).ready(function () {
             $.ajax({
                 type: "GET",
                 url: "status.php",
@@ -34,22 +49,22 @@ $machine_id = $_GET['appliance_id'];
 </head>
 
 <?php
-if (isset($_POST['form_submit'])) {//Form was submitted
-    (isset($_POST['machine_state'])) ? $status = 1 : $status = 0;
-    //Update DB
-    $db = new PDO('mysql:host=us-cdbr-east-02.cleardb.com:3306;dbname=heroku_9cfa0e39f4cc915;charset=utf8mb4', 'b5cab6ba381e22', '032f36fc');
-    $update = $db->prepare("UPDATE `appliances` SET `status` = ? WHERE `appliance_id` = ? LIMIT 1;");
-    $update->execute([$status, $machine_id]);
-} else {//Page was loaded
-    $status = $_SESSION['status'];
-}
-if ($status) {//status = 1 (on)
-    $status_str = "on";
-    $checked_status = "checked";
-} else {
-    $status_str = "off";
-    $checked_status = "";
-}
+	if (isset($_POST['form_submit'])) {//Form was submitted
+		(isset($_POST['machine_state'])) ? $status = 1 : $status = 0;
+		//Update DB
+		$db = new PDO('mysql:host=us-cdbr-east-02.cleardb.com:3306;dbname=heroku_9cfa0e39f4cc915;charset=utf8mb4', 'b5cab6ba381e22', '032f36fc');
+		$update = $db->prepare("UPDATE `appliances` SET `status` = ? WHERE `appliance_id` = ? LIMIT 1;");
+		$update->execute([$status, $machine_id]);
+	} else {//Page was loaded
+		$status = $_SESSION['status'];
+	}
+	if ($status) {//status = 1 (on)
+		$status_str = "on";
+		$checked_status = "checked";
+	} else {
+		$status_str = "off";
+		$checked_status = "";
+	}
 ?>
 
 <body>
@@ -66,7 +81,7 @@ if ($status) {//status = 1 (on)
 				<td>
 				<form method="post">
 						<div class="toggle-wrapper">
-							<div class="toggle normal"><input value="Update" type="submit" id="normal" name='machine_state' type="checkbox" /><label class="toggle-item" for="normal"></label></div>
+							<div class="toggle normal"><input id="normal" name='machine_state' type="checkbox" /><label class="toggle-item" for="normal"></label></div>
 							<div class="name">Appliance 1</div>
 						</div>
             	</form>
