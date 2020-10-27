@@ -20,20 +20,6 @@ $machine_id = 1;
 	<script src="js/modernizr-custom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript">
-        
-		$('.toggle normal').on('change', function() {
-  			var toggle_data = $(this).data('no-uniform')
-      		toggle_value = $(this).val();
-
-  			$.ajax({
-				type: "GET",
-                url: "status.php",
-                data: {"appliance_id": <?php echo $machine_id;?>},
-                success: function (data) {
-                    console.log(data)
-                }
-  			});
-		});
 		
 		$(document).ready(function () {
             $.ajax({
