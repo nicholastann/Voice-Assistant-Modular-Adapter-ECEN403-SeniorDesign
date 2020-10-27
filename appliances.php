@@ -1,29 +1,7 @@
 <?php
 session_start();
 $machine_id = $_GET['appliance_id'];
-
-if (isset($_POST['form_submit'])) {//Form was submitted
-    (isset($_POST['machine_state'])) ? $status = 1 : $status = 0;
-    //Update DB
-    $db = new PDO('mysql:host=us-cdbr-east-02.cleardb.com:3306;dbname=heroku_9cfa0e39f4cc915;charset=utf8mb4', 'b5cab6ba381e22', '032f36fc');
-    $update = $db->prepare("UPDATE `appliances` SET `status` = ? WHERE `appliance_id` = ? LIMIT 1;");
-    $update->execute([$status, $machine_id]);
-} else {//Page was loaded
-    $status = $_SESSION['status'];
-}
-if ($status) {//status = 1 (on)
-    $status_str = "on";
-    $checked_status = "checked";
-} else {
-    $status_str = "off";
-    $checked_status = "";
-}
 ?>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -55,6 +33,25 @@ if ($status) {//status = 1 (on)
     </script>
 </head>
 
+<?php
+if (isset($_POST['form_submit'])) {//Form was submitted
+    (isset($_POST['machine_state'])) ? $status = 1 : $status = 0;
+    //Update DB
+    $db = new PDO('mysql:host=us-cdbr-east-02.cleardb.com:3306;dbname=heroku_9cfa0e39f4cc915;charset=utf8mb4', 'b5cab6ba381e22', '032f36fc');
+    $update = $db->prepare("UPDATE `appliances` SET `status` = ? WHERE `appliance_id` = ? LIMIT 1;");
+    $update->execute([$status, $machine_id]);
+} else {//Page was loaded
+    $status = $_SESSION['status'];
+}
+if ($status) {//status = 1 (on)
+    $status_str = "on";
+    $checked_status = "checked";
+} else {
+    $status_str = "off";
+    $checked_status = "";
+}
+?>
+
 <body>
 		<header class="bp-header cf">
 			<div class="bp-header__main">
@@ -67,16 +64,12 @@ if ($status) {//status = 1 (on)
 			<table class="w3-table w3-blue">
 			  <tr>
 				<td>
-					
-
 				<form method="post">
-                <fieldset> 
-					<div class="toggle-wrapper">
-						<div class="toggle normal"><input value="Update" type="submit" id="normal" name='machine_state' type="checkbox" /><label class="toggle-item" for="normal"></label></div>
-						<div class="name">Appliance 1</div>
-					</div>
-                </fieldset>
-            </form>
+						<div class="toggle-wrapper">
+							<div class="toggle normal"><input value="Update" type="submit" id="normal" name='machine_state' type="checkbox" /><label class="toggle-item" for="normal"></label></div>
+							<div class="name">Appliance 1</div>
+						</div>
+            	</form>
 
 				</td>
 				<td>
