@@ -5,17 +5,17 @@ require_once __DIR__ . "/config.php";
 class API {
     function Select() {
         $db = new Connect();
-        $users = array();
-        $data = $db->prepare("SELECT * FROM appliances ORDER BY appliance_id");
+        $appliances = array();
+        $data = $db->prepare("SELECT * FROM appliances");
         $data -> execute();
         while($OutputData = $data -> fetch(PDO::FETCH_ASSOC)){
-            $users[$OutputData['id']] = array(
+            $appliances[$OutputData['id']] = array(
                 "id" => $OutputData["id"],
                 "status" => $OutputData["status"],
                 "edit_date" => $OutputData["edit_date"]
             );
         }
-        return json_encode($users);
+        return json_encode($appliances);
     }
 }
 
