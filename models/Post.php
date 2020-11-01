@@ -10,7 +10,7 @@ class Post {
     public $edited_at;
 
     //const w/ DB
-    public function __construct) {
+    public function __construct() {
         $this->conn = $db;
     }
 
