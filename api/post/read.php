@@ -4,7 +4,7 @@ header("access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
 include_once "../../config/Database.php";
-include_once "../../models/Post.php";
+include _once "../../models/Post.php";
 
 //instaniate DB & conn
 
@@ -39,7 +39,5 @@ if($num > 0) {
     //to JSON
     echo json_encode($posts_arr);
 } else {
-    echo json_encode(
-        array("message" => "no posts found");
-    );
+
 }
