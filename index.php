@@ -6,19 +6,18 @@ class API {
     function Select() {
         $db = new Connect();
         $users = array();
-        $data = $db->prepare("SELECT * FROM users ORDER BY appliance_id");
+        $data = $db->prepare("SELECT * FROM appliances ORDER BY appliance_id");
         $data -> execute();
         while($OutputData = $data -> fetch(PDO::FETCH_ASSOC)){
             $users[$OutputData['id']] = array(
                 "id" => $OutputData["id"],
                 "status" => $OutputData["status"],
-                "age" => $OutputData["age"]
+                "edit_date" => $OutputData["edit_date"]
             );
         }
         return json_encode($users);
     }
 }
-
 
 $API = new API;
 header("content-Type: application/json");
