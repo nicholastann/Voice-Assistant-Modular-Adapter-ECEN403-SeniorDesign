@@ -43,3 +43,4 @@ if($num > 0) {
         array("message" => "no posts found")
     );
 }
+?>
