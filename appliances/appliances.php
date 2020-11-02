@@ -1,9 +1,4 @@
 <?php
-/**
- * appliance: TheCodeholic
- * Date: 3/19/2019
- * Time: 9:27 AM
- */
 
 function getappliances()
 {

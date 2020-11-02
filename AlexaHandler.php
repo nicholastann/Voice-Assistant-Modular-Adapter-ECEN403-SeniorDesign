@@ -130,7 +130,7 @@ const PowerIntentHandler = {
         const speakOutput = `toggling ${intentName}`;
 
         <?php
-            require '/appliances/appliances.php';
+            require __DIR__ . '/appliances/appliances.php';
 
             $appliance = [
                 'id' => '1',
