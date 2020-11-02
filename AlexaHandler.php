@@ -1,9 +1,11 @@
+<script> 
 /* *
  * This sample demonstrates handling intents from an Alexa skill using the Alexa Skills Kit SDK (v2).
  * Please visit https://alexa.design/cookbook for additional examples on implementing slots, dialog management,
  * session persistence, api calls, and more.
  * */
 const Alexa = require('ask-sdk-core');
+const fetch = require("node-fetch");
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -119,13 +121,32 @@ const IntentReflectorHandler = {
 
 
 const PowerIntentHandler = {
+    
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest';
     },
     handle(handlerInput) {
         const intentName = Alexa.getIntentName(handlerInput.requestEnvelope);
         
-        const speakOutput = `You just triggered ${intentName}`;
+        const speakOutput = `toggling ${intentName}`;
+        
+        fetch("https://vama.herokuapp.com/api/update.php?id=1", {
+          "method": "POST",
+          "headers": {
+            "content-type": "application/json"
+          },
+          "body": {
+            "id": 1,
+            "name": "TV 1",
+            "status": "1"
+          }
+        })
+        .then(response => {
+          console.log(response);
+        })
+        .catch(err => {
+          console.error(err);
+        });
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -191,3 +212,4 @@ exports.handler = Alexa.SkillBuilders.custom()
         ErrorHandler)
     .withCustomUserAgent('sample/hello-world/v1.2')
     .lambda();
+</script> 
