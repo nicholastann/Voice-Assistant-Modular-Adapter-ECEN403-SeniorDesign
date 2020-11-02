@@ -132,7 +132,11 @@ const PowerIntentHandler = {
         <?php
             require '/appliances/appliances.php';
 
-            $appliance = "{"id":1,"name":"TV 1","status":"1"}";
+            $appliance = [
+                'id' => '1',
+                'name' => 'alexa TV 1',
+                'status' => '1'
+            ];
             $appliance = array_merge($appliance, $_POST);
             $isValid = validateappliance($appliance, $errors);
             if ($isValid) $appliance = updateappliance($_POST, $applianceId);
