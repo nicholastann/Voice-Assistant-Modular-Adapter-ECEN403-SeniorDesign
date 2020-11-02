@@ -5,7 +5,6 @@
  * session persistence, api calls, and more.
  * */
 const Alexa = require('ask-sdk-core');
-const fetch = require("node-fetch");
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -129,25 +128,15 @@ const PowerIntentHandler = {
         const intentName = Alexa.getIntentName(handlerInput.requestEnvelope);
         
         const speakOutput = `toggling ${intentName}`;
-        
-        fetch("https://vama.herokuapp.com/api/update.php?id=1", {
-          "method": "POST",
-          "headers": {
-            "content-type": "application/json"
-          },
-          "body": {
-            "id": 1,
-            "name": "TV 1",
-            "status": "1"
-          }
-        })
-        .then(response => {
-          console.log(response);
-        })
-        .catch(err => {
-          console.error(err);
-        });
 
+        <?php
+            require '/appliances/appliances.php';
+
+            $appliance = "{"id":1,"name":"TV 1","status":"1"}";
+            $appliance = array_merge($appliance, $_POST);
+            $isValid = validateappliance($appliance, $errors);
+            if ($isValid) $appliance = updateappliance($_POST, $applianceId);
+        ?>
         return handlerInput.responseBuilder
             .speak(speakOutput)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
