@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "TV 1",
+        "status": "0"
+    },
+    {
+        "id": 2,
+        "name": "TV 2",
+        "status": "0"
+    },
+    {
+        "id": 3,
+        "name": "TV 3",
+        "status": "0"
+    },
+    {
+        "id": 4,
+        "name": "TV 4",
+        "status": "0"
+    }
+]
