@@ -1,5 +1,5 @@
 <?php
-require '../appliances/appliancesapi.php';
+require '../appliances/appliances.php';
 
 $appliances = getappliances();
 ?>
