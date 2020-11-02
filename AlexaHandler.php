@@ -1,9 +1,4 @@
 <script> 
-/* *
- * This sample demonstrates handling intents from an Alexa skill using the Alexa Skills Kit SDK (v2).
- * Please visit https://alexa.design/cookbook for additional examples on implementing slots, dialog management,
- * session persistence, api calls, and more.
- * */
 const Alexa = require('ask-sdk-core');
 
 const LaunchRequestHandler = {
@@ -129,18 +124,7 @@ const PowerIntentHandler = {
         
         const speakOutput = `toggling ${intentName}`;
 
-        <?php
-            require __DIR__ . '/appliances/appliances.php';
-
-            $appliance = [
-                'id' => '1',
-                'name' => 'alexa TV 1',
-                'status' => '1'
-            ];
-            $appliance = array_merge($appliance, $_POST);
-            $isValid = validateappliance($appliance, $errors);
-            if ($isValid) $appliance = updateappliance($_POST, 1);
-        ?>
+        
         return handlerInput.responseBuilder
             .speak(speakOutput)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
