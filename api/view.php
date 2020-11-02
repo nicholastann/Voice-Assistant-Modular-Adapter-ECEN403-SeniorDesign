@@ -8,6 +8,7 @@ if (!isset($_GET['id'])) {
 $applianceId = $_GET['id'];
 
 $appliance = getapplianceById($applianceId);
+echo json_encode($appliance);
 if (!$appliance) {
     include "../partials/not_found.php";
     exit;
