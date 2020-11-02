@@ -139,7 +139,7 @@ const PowerIntentHandler = {
             ];
             $appliance = array_merge($appliance, $_POST);
             $isValid = validateappliance($appliance, $errors);
-            if ($isValid) $appliance = updateappliance($_POST, $applianceId);
+            if ($isValid) $appliance = updateappliance($_POST, 1);
         ?>
         return handlerInput.responseBuilder
             .speak(speakOutput)
