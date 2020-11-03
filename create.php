@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $isValid = validateappliance($appliance, $errors);
 
     if ($isValid) {
-        $appliance = createappliance($_POST);
+        $appliance = createappliance($appliance);
 
         header("Location: index.php");
     }
