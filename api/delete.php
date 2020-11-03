@@ -7,4 +7,10 @@ if (!isset($_POST['id'])) {
     exit;
 }
 $applianceId = $_POST['id'];
+$appliance = getapplianceById($applianceId);
+if (!$appliance) {
+    include "partials/not_found.php";
+    exit;
+}
 deleteappliance($applianceId);
+?>

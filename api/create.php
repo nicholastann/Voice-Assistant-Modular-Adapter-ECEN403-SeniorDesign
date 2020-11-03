@@ -1,19 +1,18 @@
 <?php
-require '../appliances/appliances.php';
+    require '../appliances/appliances.php';
 
-$appliance = [
-    'id' => '',
-    'name' => '',
-    'status' => ''
-];
+    $appliance = [
+        'id' => '',
+        'name' => '',
+        'status' => ''
+    ];
 
-$errors = [
-    'name' => "",
-    'status' => ""
-];
-$isValid = true;
+    $errors = [
+        'name' => "",
+        'status' => ""
+    ];
+    $isValid = true;
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $appliance = array_merge($appliance, $_POST);
 
     $isValid = validateappliance($appliance, $errors);
@@ -21,7 +20,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($isValid) {
         $appliance = createappliance($_POST);
     }
-}
-
 ?>
 
