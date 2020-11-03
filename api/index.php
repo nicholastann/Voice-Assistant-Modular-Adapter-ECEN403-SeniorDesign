@@ -1,6 +1,6 @@
 <?php
-require '../appliances/appliances.php';
-
-$appliances = getappliances();
-echo json_encode($appliances);
+    require '../appliances/appliances.php';
+    
+    $appliances = getappliances();
+    echo json_encode($appliances);
 ?>
