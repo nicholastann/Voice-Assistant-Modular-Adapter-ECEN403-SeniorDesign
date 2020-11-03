@@ -2,14 +2,14 @@
     require '../appliances/appliances.php';
 
     if (!isset($_GET['id'])) {
-        include "partials/not_found.php";
+        echo "error no appliance with that id first error";
         exit;
     }
     $applianceId = $_GET['id'];
 
     $appliance = getapplianceById($applianceId);
     if (!$appliance) {
-        include "partials/not_found.php";
+        echo "error no appliance with that id";
         exit;
     }
 
@@ -17,7 +17,6 @@
         'name' => "",
         'status' => ""
     ];
-
 
     $appliance = array_merge($appliance, $_POST);
 
