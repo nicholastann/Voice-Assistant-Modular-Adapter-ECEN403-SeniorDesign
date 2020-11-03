@@ -20,10 +20,10 @@ function createappliance($data)
 {
     $appliances = getappliances();
 
-    $newId = 0;
-    do {
-        $newId+=1;
-    } while (getapplianceByID($newID) != null);
+    $newId = 1;
+    while (getapplianceByID($newID)) {
+        $newId = $newId + 1;
+    }
 
     $data['id'] = $newID;
     $appliances[] = $data;
