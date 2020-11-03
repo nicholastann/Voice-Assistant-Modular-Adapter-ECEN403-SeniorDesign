@@ -6,8 +6,6 @@
     $applianceName = $data_back->{"name"};
     $applianceStatus = $data_back->{"status"};
 
-    $appliance = getapplianceById($applianceId);
-
     $appliance = [
         'id' => $applianceId,
         'name' => $applianceName,
@@ -23,7 +21,7 @@
 
     $isValid = validateappliance($appliance, $errors);
 
-    if ($isValid) $appliance = createappliance($_POST, $applianceId);
+    if ($isValid) $appliance = createappliance($_POST);
 ?>
 
 
