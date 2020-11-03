@@ -15,6 +15,7 @@ include 'partials/header.php';
     <table class="table">
         <thead>
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>status</th>
             <th>Actions</th>
@@ -23,6 +24,7 @@ include 'partials/header.php';
         <tbody>
         <?php foreach ($appliances as $appliance): ?>
             <tr>
+                <td><?php echo $appliance['id'] ?></td>
                 <td><?php echo $appliance['name'] ?></td>
                 <td><?php echo $appliance['status'] ?></td>
                 <td>

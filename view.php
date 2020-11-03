@@ -30,6 +30,10 @@ if (!$appliance) {
         <table class="table">
             <tbody>
             <tr>
+                <th>ID:</th>
+                <td><?php echo $appliance['id'] ?></td>
+            </tr>
+            <tr>
                 <th>Name:</th>
                 <td><?php echo $appliance['name'] ?></td>
             </tr>
