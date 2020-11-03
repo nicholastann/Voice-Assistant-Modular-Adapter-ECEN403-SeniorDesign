@@ -17,11 +17,9 @@
         'status' => ""
     ];
 
-    $appliance = array_merge($appliance, $_POST);
-
     $isValid = validateappliance($appliance, $errors);
 
-    if ($isValid) $appliance = createappliance($_POST);
+    if ($isValid) $appliance = createappliance($appliance);
 ?>
 
 
