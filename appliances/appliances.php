@@ -20,7 +20,7 @@ function createappliance($data)
 {
     $appliances = getappliances();
 
-    $data['id'] = rand(1000000, 2000000);
+    $data['id'] = $appliances.length +1;
 
     $appliances[] = $data;
 
