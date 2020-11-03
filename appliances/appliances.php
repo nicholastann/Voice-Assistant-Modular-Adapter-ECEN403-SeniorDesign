@@ -21,7 +21,7 @@ function createappliance($data)
     $appliances = getappliances();
 
     $newId = 1;
-    while (getapplianceByID($newID)) {
+    while (getapplianceByID($newID)["id"] > 0) {
         $newId = $newId + 1;
     }
 
