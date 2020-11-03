@@ -18,6 +18,8 @@ function getapplianceById($id)
 
 function createappliance($data)
 {
+    $appliances = getappliances();
+    
     $newId = 0;
     do {
         $newId+=1;
