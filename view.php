@@ -15,36 +15,39 @@ if (!$appliance) {
 }
 
 ?>
-<div class="container">
-    <div class="card">
-        <div class="card-header">
-            <h3>View appliance: <b><?php echo $appliance['name'] ?></b></h3>
+<body style="background-color:#101020;">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h3>View appliance: <b><?php echo $appliance['name'] ?></b></h3>
+            </div>
+            <div class="card-body">
+                <a class="btn btn-secondary" href="update.php?id=<?php echo $appliance['id'] ?>">Update</a>
+                <form style="display: inline-block" method="POST" action="delete.php">
+                    <input type="hidden" name="id" value="<?php echo $appliance['id'] ?>">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+            <table class="table" style="color:#fff">
+                <tbody>
+                <tr>
+                    <th>ID:</th>
+                    <td><?php echo $appliance['id'] ?></td>
+                </tr>
+                <tr>
+                    <th>Name:</th>
+                    <td><?php echo $appliance['name'] ?></td>
+                </tr>
+                <tr>
+                    <th>status:</th>
+                    <td><?php echo $appliance['status'] ?></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="card-body">
-            <a class="btn btn-secondary" href="update.php?id=<?php echo $appliance['id'] ?>">Update</a>
-            <form style="display: inline-block" method="POST" action="delete.php">
-                <input type="hidden" name="id" value="<?php echo $appliance['id'] ?>">
-                <button class="btn btn-danger">Delete</button>
-            </form>
-        </div>
-        <table class="table">
-            <tbody>
-            <tr>
-                <th>ID:</th>
-                <td><?php echo $appliance['id'] ?></td>
-            </tr>
-            <tr>
-                <th>Name:</th>
-                <td><?php echo $appliance['name'] ?></td>
-            </tr>
-            <tr>
-                <th>status:</th>
-                <td><?php echo $appliance['status'] ?></td>
-            </tr>
-            </tbody>
-        </table>
     </div>
-</div>
+</body>
+
 
 
 <?php include 'partials/footer.php' ?>
