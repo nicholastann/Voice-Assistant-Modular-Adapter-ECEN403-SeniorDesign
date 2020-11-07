@@ -30,7 +30,7 @@ include 'partials/header.php';
                     <td>
                         <a href="view.php?id=<?php echo $appliance['id'] ?>" class="btn btn-sm btn-outline-info">View</a>
                         <a href="update.php?id=<?php echo $appliance['id'] ?>"
-                        class="btn btn-sm btn-outline-secondary">Update</a>
+                        class="btn btn-sm btn-outline-secondary" style="color:#ffffaa;">Update</a>
                         <form method="POST" action="delete.php">
                             <input type="hidden" name="id" value="<?php echo $appliance['id'] ?>">
                             <button class="btn btn-sm btn-outline-danger">Delete</button>
