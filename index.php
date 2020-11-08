@@ -28,12 +28,12 @@ include 'partials/header.php';
                     <td><?php echo $appliance['name'] ?></td>
                     <td><?php echo $appliance['status'] ?></td>
                     <td>
-                        <a href="view.php?id=<?php echo $appliance['id'] ?>" class="btn btn-sm btn-outline-info">View</a>
+                        <a href="view.php?id=<?php echo $appliance['id'] ?>" style="background-color:#17a2b8;" class="btn btn-sm btn-outline-info">View</a>
                         <a href="update.php?id=<?php echo $appliance['id'] ?>"
-                        class="btn btn-sm btn-outline-secondary" style="color:#ffffaa;">Update</a>
+                        class="btn btn-sm btn-outline-secondary" style="background-color:#ffffaa;">Update</a>
                         <form method="POST" action="delete.php">
                             <input type="hidden" name="id" value="<?php echo $appliance['id'] ?>">
-                            <button class="btn btn-sm btn-outline-danger">Delete</button>
+                            <button style="background-color:#ffffaa;" class="btn btn-sm btn-outline-danger">Delete</button>
                         </form>
                     </td>
                 </tr>

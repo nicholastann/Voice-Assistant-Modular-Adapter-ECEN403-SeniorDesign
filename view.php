@@ -16,13 +16,13 @@ if (!$appliance) {
 
 ?>
 <body style="background-color:#101020;">
-    <div class="container">
-        <div class="card">
+    <div style="background-color:#101020;" class="container">
+        <div style="background-color:#101020;" class="card">
             <div class="card-header">
                 <h3>View appliance: <b><?php echo $appliance['name'] ?></b></h3>
             </div>
             <div class="card-body">
-                <a class="btn btn-secondary" style="color:#ffffaa;" href="update.php?id=<?php echo $appliance['id'] ?>">Update</a>
+                <a class="btn btn-secondary" style="background-color:#ffffaa;" href="update.php?id=<?php echo $appliance['id'] ?>">Update</a>
                 <form style="display: inline-block" method="POST" action="delete.php">
                     <input type="hidden" name="id" value="<?php echo $appliance['id'] ?>">
                     <button class="btn btn-danger">Delete</button>
