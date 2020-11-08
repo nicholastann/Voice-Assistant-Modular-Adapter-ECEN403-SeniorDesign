@@ -22,7 +22,7 @@ if (!$appliance) {
                 <h3>View appliance: <b><?php echo $appliance['name'] ?></b></h3>
             </div>
             <div class="card-body">
-                <a class="btn btn-secondary" style="background-color:#aaaa55;" href="update.php?id=<?php echo $appliance['id'] ?>">Update</a>
+                <a class="btn btn-secondary" style="background-color:#c8a853;" href="update.php?id=<?php echo $appliance['id'] ?>">Update</a>
                 <form style="display: inline-block" method="POST" action="delete.php">
                     <input type="hidden" name="id" value="<?php echo $appliance['id'] ?>">
                     <button class="btn btn-danger">Delete</button>
