@@ -28,7 +28,7 @@ include 'partials/header.php';
                     <td><?php echo $appliance['name'] ?></td>
                     <td><?php echo $appliance['status'] ?></td>
                     <td>
-                        <a href="view.php?id=<?php echo $appliance['id'] ?>" style="background-color:#17a2b8; color:#ffffff;" class="btn btn-sm btn-outline-info">View</a>
+                        <a href="view.php?id=<?php echo $appliance['id'] ?>" style="background-color:#1092a8; color:#ffffff;" class="btn btn-sm btn-outline-info">View</a>
                         <a href="update.php?id=<?php echo $appliance['id'] ?>"
                         class="btn btn-sm btn-outline-secondary" style="background-color:#555555; color:#ffffff;">Update</a>
                         <form method="POST" action="delete.php">
