@@ -1,6 +1,6 @@
 <body style="background-color:#101020;">
-    <div style="background-color:#101020;" class="container">
-        <div style="background-color:#101020;" class="card">
+    <div style="background-color:#101020; color:#ffffff;" class="container">
+        <div style="background-color:#101020; class="card">
             <div class="card-header">
                 <h3>
                     <?php if ($appliance['id']): ?>
