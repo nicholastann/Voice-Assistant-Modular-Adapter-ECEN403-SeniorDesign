@@ -13,8 +13,8 @@ $appliance = [
 
 $errors = [
     'name' => "",
-    'status' => ""
-    'channel' => ""
+    'status' => "",
+    'channel' => "",
     'volume' => ""
 ];
 $isValid = true;

@@ -18,8 +18,8 @@
 
     $errors = [
         'name' => "",
-        'status' => ""
-        'channel' => ""
+        'status' => "",
+        'channel' => "",
         'volume' => ""
     ];
 
