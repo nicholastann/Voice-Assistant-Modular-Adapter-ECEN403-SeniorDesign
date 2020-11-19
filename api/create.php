@@ -5,16 +5,22 @@
     $applianceId = $data_back->{"id"};
     $applianceName = $data_back->{"name"};
     $applianceStatus = $data_back->{"status"};
+    $applianceChannel = $data_back->{"channel"};
+    $applianceVolume = $data_back->{"volume"};
 
     $appliance = [
         'id' => $applianceId,
         'name' => $applianceName,
         'status' => $applianceStatus
+        'channel' => $applianceChannel
+        'volume' => $applianceVolume
     ];
 
     $errors = [
         'name' => "",
         'status' => ""
+        'channel' => ""
+        'volume' => ""
     ];
 
     $isValid = validateappliance($appliance, $errors);

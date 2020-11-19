@@ -7,11 +7,15 @@ $appliance = [
     'id' => '',
     'name' => '',
     'status' => ''
+    'channel' => ''
+    'volume' => ''
 ];
 
 $errors = [
     'name' => "",
     'status' => ""
+    'channel' => ""
+    'volume' => ""
 ];
 $isValid = true;
 

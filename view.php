@@ -42,6 +42,14 @@ if (!$appliance) {
                     <th>status:</th>
                     <td><?php echo $appliance['status'] ?></td>
                 </tr>
+                <tr>
+                    <th>channel:</th>
+                    <td><?php echo $appliance['channel'] ?></td>
+                </tr>
+                <tr>
+                    <th>volume:</th>
+                    <td><?php echo $appliance['volume'] ?></td>
+                </tr>
                 </tbody>
             </table>
         </div>

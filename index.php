@@ -18,6 +18,8 @@ include 'partials/header.php';
                 <th>ID</th>
                 <th>Name</th>
                 <th>status</th>
+                <th>channel</th>
+                <th>volume</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -27,6 +29,8 @@ include 'partials/header.php';
                     <td><?php echo $appliance['id'] ?></td>
                     <td><?php echo $appliance['name'] ?></td>
                     <td><?php echo $appliance['status'] ?></td>
+                    <td><?php echo $appliance['channel'] ?></td>
+                    <td><?php echo $appliance['volume'] ?></td>
                     <td>
                         <a href="view.php?id=<?php echo $appliance['id'] ?>" style="background-color:#1092a8; color:#ffffff;" class="btn btn-sm btn-outline-info">View</a>
                         <a href="update.php?id=<?php echo $appliance['id'] ?>"

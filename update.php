@@ -17,6 +17,8 @@ if (!$appliance) {
 $errors = [
     'name' => "",
     'status' => ""
+    'channel' => ""
+    'volume' => ""
 ];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

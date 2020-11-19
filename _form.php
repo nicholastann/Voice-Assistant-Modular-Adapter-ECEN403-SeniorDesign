@@ -31,6 +31,25 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label>Channel</label>
+                        <input name="channel" value="<?php echo $appliance['channel'] ?>"
+                            class="form-control  <?php echo $errors['channel'] ? 'is-invalid' : '' ?>">
+                        <div class="invalid-feedback">
+                            <?php echo  $errors['channel'] ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Volume</label>
+                        <input name="volume" value="<?php echo $appliance['volume'] ?>"
+                            class="form-control  <?php echo $errors['volume'] ? 'is-invalid' : '' ?>">
+                        <div class="invalid-feedback">
+                            <?php echo  $errors['volume'] ?>
+                        </div>
+                    </div>
+
+
                     <button class="btn btn-success">Submit</button>
                 </form>
             </div>
