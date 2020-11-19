@@ -7,9 +7,10 @@ include 'partials/header.php';
 ?>
 
 <body style="background-color:#101020;">
+    <h1>VAMA Appliance Dashboard</h1>
     <div class="container">
         <p>
-            <a class="btn btn-success" href="create.php">Create new appliance</a>
+            <a class="btn btn-success" style="background-color:#228732;" href="create.php">Create new appliance</a>
         </p>
 
         <table class="table" style="color:#fff">
@@ -32,7 +33,7 @@ include 'partials/header.php';
                     <td><?php echo $appliance['channel'] ?></td>
                     <td><?php echo $appliance['volume'] ?></td>
                     <td>
-                        <a href="view.php?id=<?php echo $appliance['id'] ?>" style="background-color:#1092a8; color:#ffffff;" class="btn btn-sm btn-outline-info">View</a>
+                        <a href="view.php?id=<?php echo $appliance['id'] ?>" style="background-color:#088292; color:#ffffff;" class="btn btn-sm btn-outline-info">View</a>
                         <a href="update.php?id=<?php echo $appliance['id'] ?>"
                         class="btn btn-sm btn-outline-secondary" style="background-color:#555555; color:#ffffff;">Update</a>
                         <form method="POST" action="delete.php">
