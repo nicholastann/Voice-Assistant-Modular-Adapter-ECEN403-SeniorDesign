@@ -9,9 +9,6 @@ include 'partials/header.php';
 <body style="background-color:#101020;">
     <h1 style="color:white; text-align:center;">VAMA Appliance Dashboard</h1>
     <div class="container">
-        <p>
-            <a class="btn btn-success" style="background-color:#228732;" href="create.php">Create new appliance</a>
-        </p>
 
         <table class="table" style="color:#fff">
             <thead>
@@ -45,6 +42,9 @@ include 'partials/header.php';
             <?php endforeach;; ?>
             </tbody>
         </table>
+        <p>
+            <a class="btn btn-success" style="background-color:#228732;" href="create.php">Create new appliance</a>
+        </p>
     </div>
 </body>
 
