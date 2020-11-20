@@ -11,8 +11,8 @@
     $appliance = [
         'id' => $applianceId,
         'name' => $applianceName,
-        'status' => $applianceStatus
-        'channel' => $applianceChannel
+        'status' => $applianceStatus,
+        'channel' => $applianceChannel,
         'volume' => $applianceVolume
     ];
     
