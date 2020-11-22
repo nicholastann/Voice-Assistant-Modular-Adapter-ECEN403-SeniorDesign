@@ -82,6 +82,26 @@ function validateappliance($appliance, &$errors)
             $errors['status'] = 'Status must be 1 or 0';
         }
     }
+    if (!$appliance['channel']) {
+        if ($appliance['channel'] < 0) {
+            $isValid = false;
+            $errors['status'] = 'channel cannot be less than 0';
+        }
+        else if ($appliance['channel'] > 1000) {
+            $isValid = false;
+            $errors['channel'] = 'channel cannot be greater than 1000';
+        }
+    }
+    if (!$appliance['volume']) {
+        if ($appliance['volume'] < 0) {
+            $isValid = false;
+            $errors['volume'] = 'volume cannot be less than 0';
+        }
+        else if ($appliance['volume'] > 100) {
+            $isValid = false;
+            $errors['volume'] = 'volume cannot be greater than 100';
+        }
+    }
     // End Of validation
 
     return $isValid;
