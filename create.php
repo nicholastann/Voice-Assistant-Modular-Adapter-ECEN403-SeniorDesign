@@ -6,8 +6,8 @@ require __DIR__ . '/appliances/appliances.php';
 $appliance = [
     'id' => '',
     'name' => '',
-    'status' => ''
-    'channel' => ''
+    'status' => '',
+    'channel' => '',
     'volume' => ''
 ];
 
