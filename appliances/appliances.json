@@ -26,14 +26,14 @@
         "status": "0",
         "channel": "10",
         "volume": "40"
-    }
+    },
     {
         "id": 5,
         "name": "Motor Test 1",
         "status": "0",
         "channel": "",
         "volume": ""
-    }
+    },
     {
         "id": 6,
         "name": "Motor Test 2",
