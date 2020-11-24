@@ -83,7 +83,7 @@ function validateappliance($appliance, &$errors)
         }
     }
     if (!$appliance['channel']) {
-        if ($appliance['channel'] < 0) {
+        if ($appliance['channel'] < 1) {
             $isValid = false;
             $errors['status'] = 'channel cannot be less than 0';
         }
