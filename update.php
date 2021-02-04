@@ -1,6 +1,7 @@
 <?php
 include 'partials/header.php';
 require __DIR__ . '/appliances/appliances.php';
+var axios = require("axios").default;
 
 if (!isset($_GET['id'])) {
     include "partials/not_found.php";
