@@ -18,7 +18,8 @@ $errors = [
     'name' => "",
     'status' => "",
     'channel' => "",
-    'volume' => ""
+    'volume' => "",
+    'url' => ""
 ];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -28,6 +29,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($isValid) {
         $appliance = updateappliance($_POST, $applianceId);
+
+        var options2 = {
+            method: 'POST',
+            url: '',
+            headers: {'Content-Type': 'application/json'},
+            data: json_encode($appliance);
+        };
+          
+        axios.request(options2).then(function (response) { console.log(response.data); }).catch(function (error) {console.error(error); });
+
         header("Location: index.php");
     }
 }

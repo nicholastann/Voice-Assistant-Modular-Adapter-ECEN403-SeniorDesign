@@ -13,14 +13,16 @@
         'name' => $applianceName,
         'status' => $applianceStatus,
         'channel' => $applianceChannel,
-        'volume' => $applianceVolume
+        'volume' => $applianceVolume,
+        'url' => $applianceUrl
     ];
 
     $errors = [
         'name' => "",
         'status' => "",
         'channel' => "",
-        'volume' => ""
+        'volume' => "",
+        'url' => ""
     ];
 
     $isValid = validateappliance($appliance, $errors);

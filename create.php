@@ -8,14 +8,16 @@ $appliance = [
     'name' => '',
     'status' => '',
     'channel' => '',
-    'volume' => ''
+    'volume' => '',
+    'url' => ''
 ];
 
 $errors = [
     'name' => "",
     'status' => "",
     'channel' => "",
-    'volume' => ""
+    'volume' => "",
+    'url' => ""
 ];
 $isValid = true;
 

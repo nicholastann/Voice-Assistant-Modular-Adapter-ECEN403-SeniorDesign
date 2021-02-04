@@ -76,6 +76,10 @@ function validateappliance($appliance, &$errors)
         $isValid = false;
         $errors['name'] = 'Name is mandatory';
     }
+    if (!$appliance['url']) {
+        $isValid = false;
+        $errors['url'] = 'URL is mandatory';
+    }
     if (!$appliance['status']) {
         if ($appliance['status'] != 0) {
             $isValid = false;

@@ -50,6 +50,10 @@ if (!$appliance) {
                     <th>volume:</th>
                     <td><?php echo $appliance['volume'] ?></td>
                 </tr>
+                <tr>
+                    <th>url:</th>
+                    <td><?php echo $appliance['url'] ?></td>
+                </tr>
                 </tbody>
             </table>
         </div>
