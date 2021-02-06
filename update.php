@@ -8,6 +8,7 @@ if (!isset($_GET['id'])) {
     exit;
 }
 $applianceId = $_GET['id'];
+$applianceUrl = $_GET['url'];
 
 $appliance = getapplianceById($applianceId);
 if (!$appliance) {
@@ -31,19 +32,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($isValid) {
         $appliance = updateappliance($_POST, $applianceId);
 
-
         $curl = curl_init();
 
         curl_setopt_array($curl, [
-        CURLOPT_URL => "",              //appliance url goes here
+        CURLOPT_URL => `$applianceUrl`,      
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
         CURLOPT_TIMEOUT => 30,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => " { \n        \"name\": \"\",\n        \"id\": \"\",\n        \"volume\": \"\",\n        \"channel\": \"\",\n        \"url\": \"\"\n   }",
-        CURLOPT_HTTPHEADER => [ //^fill in appliance info above
+        CURLOPT_POSTFIELDS => `json_encode($appliance);`,
+        CURLOPT_HTTPHEADER => [ 
             "Content-Type: application/json"
         ],
         ]);
