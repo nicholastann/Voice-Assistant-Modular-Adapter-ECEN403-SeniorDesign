@@ -1,11 +1,11 @@
 [
     {
         "id": 1,
-        "name": "TV 1",
-        "status": "0",
-        "channel": "1",
-        "volume": "1",
-        "url": ""
+        "name": "TV 1a",
+        "status": "1",
+        "channel": "5",
+        "volume": "2",
+        "url": "myurl"
     },
     {
         "id": 2,

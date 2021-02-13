@@ -1,20 +1,20 @@
 <?php
 include 'partials/header.php';
 require __DIR__ . '/appliances/appliances.php';
-include '_form.php'
 
 if (!isset($_GET['id'])) {
     include "partials/not_found.php";
     exit;
 }
 $applianceId = $_GET['id'];
-$applianceUrl = $_GET['url'];
 
 $appliance = getapplianceById($applianceId);
 if (!$appliance) {
     include "partials/not_found.php";
     exit;
 }
+
+$applianceUrl = $appliance['url'];
 
 $errors = [
     'name' => "",
@@ -32,32 +32,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($isValid) {
         $appliance = updateappliance($_POST, $applianceId);
 
-        $curl = curl_init();
+        //The url you wish to send the POST request to
+        $url = $applianceUrl;
 
-        curl_setopt_array($curl, [
-        CURLOPT_URL => `$applianceUrl`,      
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => "",
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 30,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => `json_encode($appliance);`,
-        CURLOPT_HTTPHEADER => [ 
-            "Content-Type: application/json"
-        ],
-        ]);
+        //The data you want to send via POST
+        $fields = json_encode($appliance);
 
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
+        //url-ify the data for the POST
+        $fields_string = http_build_query($fields);
 
-        curl_close($curl);
+        //open connection
+        $ch = curl_init();
 
-        if ($err)  echo "cURL Error #:" . $err;
-        else echo $response;
+        //set the url, number of POST vars, POST data
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch,CURLOPT_POST, true);
+        curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+
+        //So that curl_exec returns the contents of the cURL; rather than echoing it
+        curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); 
+
+        //execute post
+        $result = curl_exec($ch);
+        echo $result;
 
         header("Location: index.php");
     }
 }
 
 ?>
+
+<?php include '_form.php' ?>
