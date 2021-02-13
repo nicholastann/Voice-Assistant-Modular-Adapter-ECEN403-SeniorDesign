@@ -91,9 +91,9 @@ function validateappliance($appliance, &$errors)
             $isValid = false;
             $errors['channel'] = 'channel cannot be less than 1';
         }
-        else if ($appliance['channel'] > 1000) {
+        else if ($appliance['channel'] > 10000) {
             $isValid = false;
-            $errors['channel'] = 'channel cannot be greater than 1000';
+            $errors['channel'] = 'channel cannot be greater than 10000';
         }
     }
     if (!$appliance['volume']) {
