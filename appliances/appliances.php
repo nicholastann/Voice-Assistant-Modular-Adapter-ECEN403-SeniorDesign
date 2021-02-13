@@ -86,10 +86,10 @@ function validateappliance($appliance, &$errors)
             $errors['status'] = 'Status must be 1 or 0';
         }
     }
-    if (!$appliance['channel']) {
+    if ($appliance['channel']) {
         if ($appliance['channel'] < 1) {
             $isValid = false;
-            $errors['status'] = 'channel cannot be less than 1';
+            $errors['channel'] = 'channel cannot be less than 1';
         }
         else if ($appliance['channel'] > 1000) {
             $isValid = false;
