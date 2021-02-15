@@ -31,7 +31,7 @@
     $isValid = validateappliance($appliance, $errors);
 
     if ($isValid) {
-        $appliance = updateappliance($appliance, $applianceId);
+        $appliance = updateappliance($_POST, $applianceId);
 
         //The url you wish to send the POST request to
         $url = $applianceUrl;
@@ -56,8 +56,6 @@
         //execute post
         $result = curl_exec($ch);
         echo $result;
-
-        header("Location: index.php");
     }
     
 ?>
