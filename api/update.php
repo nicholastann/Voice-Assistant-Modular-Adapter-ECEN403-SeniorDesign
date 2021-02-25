@@ -31,7 +31,7 @@
     $isValid = validateappliance($appliance, $errors);
 
     if ($isValid) {
-        $appliance = updateappliance($_POST, $applianceId);
+        $appliance = updateappliance($appliance, $applianceId);
 
         //The url you wish to send the POST request to
         /*$url = $applianceUrl;
