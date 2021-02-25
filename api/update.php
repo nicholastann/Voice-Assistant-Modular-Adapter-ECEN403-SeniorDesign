@@ -34,7 +34,7 @@
         $appliance = updateappliance($_POST, $applianceId);
 
         //The url you wish to send the POST request to
-        $url = $applianceUrl;
+        /*$url = $applianceUrl;
 
         //The data you want to send via POST
         $fields = json_encode($appliance);
@@ -56,6 +56,7 @@
         //execute post
         $result = curl_exec($ch);
         echo $result;
+        */
     }
     
 ?>
