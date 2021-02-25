@@ -57,5 +57,4 @@
         $result = curl_exec($ch);
         echo $result;
     }
-    
 ?>
