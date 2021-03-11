@@ -1,7 +1,5 @@
 <?php
 
-$updates = 0;
-
 function getappliances()
 {
     return json_decode(file_get_contents(__DIR__ . '/appliances.json'), true);
@@ -37,17 +35,8 @@ function createappliance($data)
     return $data;
 }
 
-function changeUniversalUpdateNumber() {
-    $appliances = getappliances();
-    foreach ($appliances as $appliance) {
-        $appliance['TestNumber'] = $updates;
-    }
-
-}
-
 function updateappliance($data, $id)
 {
-    $updates = $updates + 1;
     $updateappliance = [];
     $appliances = getappliances();
     foreach ($appliances as $i => $appliance) {
