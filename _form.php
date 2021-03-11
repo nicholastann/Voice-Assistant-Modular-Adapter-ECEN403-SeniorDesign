@@ -49,16 +49,6 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>URL</label>
-                        <input name="url" value="<?php echo $appliance['url'] ?>"
-                            class="form-control  <?php echo $errors['url'] ? 'is-invalid' : '' ?>">
-                        <div class="invalid-feedback">
-                            <?php echo  $errors['url'] ?>
-                        </div>
-                    </div>
-
-
                     <button class="btn btn-success">Submit</button>
                 </form>
             </div>
