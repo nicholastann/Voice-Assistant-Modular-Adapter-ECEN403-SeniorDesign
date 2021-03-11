@@ -49,6 +49,15 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label>Test Number</label>
+                        <input name="TestNumber" value="<?php echo $appliance['TestNumber'] ?>"
+                            class="form-control  <?php echo $errors['TestNumber'] ? 'is-invalid' : '' ?>">
+                        <div class="invalid-feedback">
+                            <?php echo  $errors['TestNumber'] ?>
+                        </div>
+                    </div>
+
                     <button class="btn btn-success">Submit</button>
                 </form>
             </div>

@@ -14,11 +14,13 @@ if (!$appliance) {
     exit;
 }
 
+
 $errors = [
     'name' => "",
     'status' => "",
     'channel' => "",
-    'volume' => ""
+    'volume' => "",
+    'TestNumber' => ""
 ];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -28,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($isValid) {
         $appliance = updateappliance($_POST, $applianceId);
+        changeUniversalUpdateNumber();
 
         header("Location: index.php");
     }
