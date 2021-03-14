@@ -40,9 +40,12 @@ function updateappliance($data, $id)
     $updateappliance = [];
     $appliances = getappliances();
     foreach ($appliances as $i => $appliance) {
+
         if ($appliance['id'] == $id) {
             $appliances[$i] = $updateappliance = array_merge($appliance, $data);
         }
+        
+        $appliances[$i]['TestNumber'] = $appliances[$i]['TestNumber'] + 1;
     }
 
     putJson($appliances);

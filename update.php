@@ -14,11 +14,13 @@ if (!$appliance) {
     exit;
 }
 
+
 $errors = [
     'name' => "",
     'status' => "",
     'channel' => "",
-    'volume' => ""
+    'volume' => "",
+    'TestNumber' => ""
 ];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
