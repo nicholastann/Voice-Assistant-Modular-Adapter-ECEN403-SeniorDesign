@@ -45,7 +45,7 @@ function updateappliance($data, $id)
             $appliances[$i] = $updateappliance = array_merge($appliance, $data);
         }
         
-        $appliances[$i]['TestNumber'] = $appliances[$i]['TestNumber'] + 1;
+        (string)$appliances[$i]['TestNumber'] = (int)$appliances[$i]['TestNumber'] + 1;
     }
 
     putJson($appliances);
