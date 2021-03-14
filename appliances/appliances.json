@@ -9,42 +9,35 @@
     },
     {
         "id": 2,
-        "name": "TV 1",
-        "status": 0,
-        "channel": 5,
-        "volume": 2,
+        "name": "Motor Test 1",
+        "status": "1",
+        "channel": "",
+        "volume": "",
         "TestNumber": 0
     },
     {
         "id": 3,
-        "name": "TV 1",
-        "status": 1,
-        "channel": 5,
-        "volume": 2,
+        "name": "Motor Test 2",
+        "status": "1",
+        "channel": "",
+        "volume": "",
         "TestNumber": 0
     },
     {
         "id": 4,
-        "name": "TV 1",
-        "status": 0,
-        "channel": 5,
-        "volume": 2,
+        "name": "TV 2",
+        "status": "0",
+        "channel": "46",
+        "volume": "50",
         "TestNumber": 0
     },
     {
         "id": 5,
-        "name": "TV 1",
-        "status": 1,
-        "channel": 5,
-        "volume": 2,
-        "TestNumber": 0
-    },
-    {
-        "id": 6,
-        "name": "TV 1",
-        "status": 1,
-        "channel": 5,
-        "volume": 2,
+        "name": "Front Lock",
+        "status": "1",
+        "channel": "",
+        "volume": "",
         "TestNumber": 0
     }
+
 ]
