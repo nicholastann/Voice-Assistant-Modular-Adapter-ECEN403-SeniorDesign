@@ -91,23 +91,30 @@ function validateappliance($appliance, &$errors)
         }
     }
 
+    if (!is_numeric($appliance['channel'])) {
+        $isValid = false;
+        $errors['channel'] = 'Channel must be an integer between 1 and 1000';
+    }
     if ((int)$appliance['channel'] < 1) {
         $isValid = false;
-        $errors['channel'] = 'channel cannot be less than 1';
+        $errors['channel'] = 'Channel cannot be less than 1';
     }
     else if ((int)$appliance['channel'] > 10000) {
         $isValid = false;
-        $errors['channel'] = 'channel cannot be greater than 10000';
+        $errors['channel'] = 'Channel cannot be greater than 10000';
     }
 
-
+    if (!is_numeric($appliance['volume'])) {
+        $isValid = false;
+        $errors['volume'] = 'Volume must be an integer between 0 and 100';
+    }
     if ((int)$appliance['volume'] < 0) {
         $isValid = false;
-        $errors['volume'] = 'volume cannot be less than 0';
+        $errors['volume'] = 'Volume cannot be less than 0';
     }
     else if ((int)$appliance['volume'] > 100) {
         $isValid = false;
-        $errors['volume'] = 'volume cannot be greater than 100';
+        $errors['volume'] = 'Volume cannot be greater than 100';
     }
     // End Of validation
 
