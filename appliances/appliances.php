@@ -81,9 +81,11 @@ function validateappliance($appliance, &$errors)
         $errors['name'] = 'Name is mandatory';
     }
     if (!$appliance['status']) {
-        if (($appliance['status'] != '0') || (($appliance['status'] != '1'))) {
-            $isValid = false;
-            $errors['status'] = 'Status must be 1 or 0';
+        if ((int)$appliance['status'] != '0') {
+            if ((int)$appliance['status'] != '1') {
+                $isValid = false;
+                $errors['status'] = 'Status must be 1 or 0';
+            }
         }
     }
     if (!(int)$appliance['channel']) {
