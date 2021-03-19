@@ -75,11 +75,14 @@ function putJson($appliances)
 function validateappliance($appliance, &$errors)
 {
     $isValid = true;
-    // Start of validation
+
+    //name validations
     if (!$appliance['name']) {
         $isValid = false;
         $errors['name'] = 'Name is mandatory';
     }
+
+    //status validations
     if (!$appliance['status']) {
         $isValid = false;
         $errors['status'] = 'Status is mandatory';
@@ -88,13 +91,14 @@ function validateappliance($appliance, &$errors)
         $isValid = false;
         $errors['status'] = 'Status must be 1 or 0';
     }
-    if ((int)$appliance['status'] != '0') {
-        if ((int)$appliance['status'] != '1') {
+    if ((int)$appliance['status'] != 0) {
+        if ((int)$appliance['status'] != 1) {
             $isValid = false;
             $errors['status'] = 'Status must be 1 or 0';
         }
     }
 
+    //channel validations
     if (!is_numeric($appliance['channel'])) {
         $isValid = false;
         $errors['channel'] = 'Channel must be an integer between 1 and 1000';
@@ -108,6 +112,7 @@ function validateappliance($appliance, &$errors)
         $errors['channel'] = 'Channel cannot be greater than 10000';
     }
 
+    //volume validations
     if (!is_numeric($appliance['volume'])) {
         $isValid = false;
         $errors['volume'] = 'Volume must be an integer between 0 and 100';
@@ -120,7 +125,5 @@ function validateappliance($appliance, &$errors)
         $isValid = false;
         $errors['volume'] = 'Volume cannot be greater than 100';
     }
-    // End Of validation
-
     return $isValid;
 }
