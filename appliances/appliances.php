@@ -81,20 +81,12 @@ function validateappliance($appliance, &$errors)
         $errors['name'] = 'Name is mandatory';
     }
     if (!$appliance['status']) {
-        $isValid = false;
-        $errors['status'] = 'Status must be 1 or 0';
-
-
-        if ((int)$appliance['status'] == 0) {
-            $isValid = true;
-            $errors['status'] = '';
-        }
-        else if ((int)$appliance['status'] == 1) {
-            $isValid = true;
-            $errors['status'] = '';
+        if (($appliance['status'] != '0') || (($appliance['status'] != '1'))) {
+            $isValid = false;
+            $errors['status'] = 'Status must be 1 or 0';
         }
     }
-    if ($appliance['channel']) {
+    if (!(int)$appliance['channel']) {
         if ((int)$appliance['channel'] < 1) {
             $isValid = false;
             $errors['channel'] = 'channel cannot be less than 1';
@@ -104,7 +96,7 @@ function validateappliance($appliance, &$errors)
             $errors['channel'] = 'channel cannot be greater than 10000';
         }
     }
-    if (!$appliance['volume']) {
+    if (!(int)$appliance['volume']) {
         if ((int)$appliance['volume'] < 0) {
             $isValid = false;
             $errors['volume'] = 'volume cannot be less than 0';
