@@ -91,8 +91,7 @@ function validateappliance($appliance, &$errors)
         $isValid = false;
         $errors['status'] = 'Status must be 1 or 0';
     }
-    if ((int)$appliance['status'] != 0) {
-        if ((int)$appliance['status'] != 1) {
+    if (((int)$appliance['status'] != 0) || ((int)$appliance['status'] != 1)) {
             $isValid = false;
             $errors['status'] = 'Status must be 1 or 0';
         }
