@@ -84,6 +84,10 @@ function validateappliance($appliance, &$errors)
         $isValid = false;
         $errors['status'] = 'Status is mandatory';
     }
+    if (!is_numeric($appliance['status'])) {
+        $isValid = false;
+        $errors['status'] = 'Status must be 1 or 0';
+    }
     if ((int)$appliance['status'] != '0') {
         if ((int)$appliance['status'] != '1') {
             $isValid = false;
