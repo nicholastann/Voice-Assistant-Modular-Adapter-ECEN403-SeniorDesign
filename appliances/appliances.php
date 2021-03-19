@@ -87,42 +87,21 @@ function validateappliance($appliance, &$errors)
         $isValid = false;
         $errors['status'] = 'Status is mandatory';
     }
-    if (!is_numeric($appliance['status'])) {
+    if (filter_var($appliance['status'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>0, "max_range"=>1))) === false) {
         $isValid = false;
         $errors['status'] = 'Status must be 1 or 0';
     }
-    if (((int)$appliance['status'] != 0) || ((int)$appliance['status'] != 1)) {
-            $isValid = false;
-            $errors['status'] = 'Status must be 1 or 0';
-        }
-    }
 
     //channel validations
-    if (!is_numeric($appliance['channel'])) {
+    if (filter_var($appliance['channel'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>1, "max_range"=>1000))) === false) {
         $isValid = false;
         $errors['channel'] = 'Channel must be an integer between 1 and 1000';
     }
-    if ((int)$appliance['channel'] < 1) {
-        $isValid = false;
-        $errors['channel'] = 'Channel cannot be less than 1';
-    }
-    else if ((int)$appliance['channel'] > 10000) {
-        $isValid = false;
-        $errors['channel'] = 'Channel cannot be greater than 10000';
-    }
 
     //volume validations
-    if (!is_numeric($appliance['volume'])) {
+    if (filter_var($appliance['volume'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>0, "max_range"=>100))) === false) {
         $isValid = false;
         $errors['volume'] = 'Volume must be an integer between 0 and 100';
-    }
-    if ((int)$appliance['volume'] < 0) {
-        $isValid = false;
-        $errors['volume'] = 'Volume cannot be less than 0';
-    }
-    else if ((int)$appliance['volume'] > 100) {
-        $isValid = false;
-        $errors['volume'] = 'Volume cannot be greater than 100';
     }
     return $isValid;
 }
