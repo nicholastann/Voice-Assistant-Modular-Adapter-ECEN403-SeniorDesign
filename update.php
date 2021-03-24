@@ -19,8 +19,7 @@ $errors = [
     'name' => "",
     'status' => "",
     'channel' => "",
-    'volume' => "",
-    'TestNumber' => ""
+    'volume' => ""
 ];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
