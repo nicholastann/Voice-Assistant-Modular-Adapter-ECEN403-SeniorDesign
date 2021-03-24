@@ -86,11 +86,6 @@ function validateappliance($appliance, &$errors)
     if (filter_var($appliance['status'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>0, "max_range"=>1))) === false) 
             $isValid = false;
             $errors['status'] = 'Status must be 1 or 0';
-
-            if ($appliance['status'] === 0 || $appliance['status'] === '0') {
-                $isValid = true;
-                $errors['status'] = '';
-            }
         }
     }
 
