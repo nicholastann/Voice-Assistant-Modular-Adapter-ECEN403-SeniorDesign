@@ -15,9 +15,9 @@ include 'partials/header.php';
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>status</th>
-                <th>channel</th>
-                <th>volume</th>
+                <th>Status</th>
+                <th>Channel</th>
+                <th>Volume</th>
                 <th>Test Number</th>
                 <th>Actions</th>
             </tr>
