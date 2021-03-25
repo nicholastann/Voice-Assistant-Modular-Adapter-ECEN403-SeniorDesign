@@ -97,15 +97,19 @@ function validateappliance($appliance, &$errors)
     } 
 
     //channel validations
-    if (filter_var($appliance['channel'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>1, "max_range"=>1000))) === false) {
-        $isValid = false;
-        $errors['channel'] = 'Channel must be an integer between 1 and 1000';
+    if ($appliance['channel']) {
+        if (filter_var($appliance['channel'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>1, "max_range"=>1000))) === false) {
+            $isValid = false;
+            $errors['channel'] = 'Channel must be an integer between 1 and 1000';
+        }
     }
 
     //volume validations
-    if (filter_var($appliance['volume'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>0, "max_range"=>100))) === false) {
-        $isValid = false;
-        $errors['volume'] = 'Volume must be an integer between 0 and 100';
+    if ($appliance['volume']) {
+        if (filter_var($appliance['volume'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>0, "max_range"=>100))) === false) {
+            $isValid = false;
+            $errors['volume'] = 'Volume must be an integer between 0 and 100';
+        }
     }
     return $isValid;
 }
