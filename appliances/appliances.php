@@ -74,6 +74,7 @@ function putJson($appliances)
 
 function validateappliance($appliance, &$errors)
 {
+    
     $isValid = true;
 
     //name validations
