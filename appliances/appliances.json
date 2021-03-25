@@ -3,16 +3,16 @@
         "id": 1,
         "name": "TV 1",
         "status": "1",
-        "channel": "6",
-        "volume": "2",
+        "channel": "1",
+        "volume": "10",
         "TestNumber": "0"
     },
     {
         "id": 2,
         "name": "Motor Test 1",
         "status": "1",
-        "channel": "",
-        "volume": "",
+        "channel": "5",
+        "volume": "10",
         "TestNumber": "0"
     },
     {
