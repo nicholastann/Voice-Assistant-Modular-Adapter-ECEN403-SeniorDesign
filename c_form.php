@@ -2,13 +2,7 @@
     <div style="background-color:#101020; color:#ffffff;" class="container">
         <div style="background-color:#101020; class="card">
             <div class="card-header">
-                <h3>
-                    <?php if ($appliance['id']): ?>
-                        Update appliance <b><?php echo $appliance['name'] ?></b>
-                    <?php else: ?>
-                        Create new appliance
-                    <?php endif ?>
-                </h3>
+                <h3> Create new appliance </h3>
             </div>
             <div class="card-body">
 
@@ -30,6 +24,20 @@
                             <?php echo  $errors['status'] ?>
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select name="formGender" class="form-control <?php echo $errors['type'] ? 'is-invalid' : '' ?>">
+                            <option value="<?php echo $appliance['type'] ?>">tv</option>
+                            <option value="<?php echo $appliance['type'] ?>">lock</option>
+                            <option value="<?php echo $appliance['type'] ?>">switch</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            <?php echo  $errors['type'] ?>
+                        </div>
+                        
+                    </div>
+
 
                     <div class="form-group">
                         <label>Channel</label>
