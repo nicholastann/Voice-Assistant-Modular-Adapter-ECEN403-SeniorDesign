@@ -35,7 +35,7 @@ include 'partials/header.php';
                         <td>
                             <a href="view.php?id=<?php echo $appliance['id'] ?>" style="background-color:#088292; color:#ffffff;" class="btn btn-sm btn-outline-info">View</a>
                             <a href="update.php?id=<?php echo $appliance['id'] ?>" class="btn btn-sm btn-outline-secondary" style="background-color:#555555; color:#ffffff;">Update</a>
-                            <form method="POST" action="delete.php">
+                            <form style="display:inline; method="POST" action="delete.php">
                                 <input type="hidden" name="id" value="<?php echo $appliance['id'] ?>">
                                 <button style="background-color:#dc3545; color:#ffffff;" class="btn btn-sm btn-outline-danger">Delete</button>
                             </form>
@@ -69,7 +69,7 @@ include 'partials/header.php';
                             <a href="update.php?id=<?php echo $appliance['id'] ?>" class="btn btn-sm btn-outline-secondary" style="background-color:#555555; color:#ffffff;">Update</a>
                             <form style="display:inline; method="POST" action="delete.php">
                                 <input type="hidden" name="id" value="<?php echo $appliance['id'] ?>">
-                                <button style="background-color:#dc3545; display:inline; color:#ffffff;" class="btn btn-sm btn-outline-danger">Delete</button>
+                                <button style="background-color:#dc3545; color:#ffffff;" class="btn btn-sm btn-outline-danger">Delete</button>
                             </form>
                         </td>
                     </tr>
@@ -99,9 +99,9 @@ include 'partials/header.php';
                         <td>
                             <a href="view.php?id=<?php echo $appliance['id'] ?>" style="background-color:#088292; color:#ffffff;" class="btn btn-sm btn-outline-info">View</a>
                             <a href="update.php?id=<?php echo $appliance['id'] ?>" class="btn btn-sm btn-outline-secondary" style="background-color:#555555; color:#ffffff;">Update</a>
-                            <a <form method="POST" action="delete.php">
+                            <form style="display:inline; method="POST" action="delete.php">
                                 <input type="hidden" name="id" value="<?php echo $appliance['id'] ?>">
-                                <a  style="background-color:#dc3545; color:#ffffff;" class="btn btn-sm btn-outline-danger">Delete </a>
+                                <button style="background-color:#dc3545; color:#ffffff;" class="btn btn-sm btn-outline-danger">Delete</button>
                             </form>
                         </td>
                     </tr>
