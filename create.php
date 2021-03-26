@@ -6,6 +6,7 @@ require __DIR__ . '/appliances/appliances.php';
 $appliance = [
     'id' => '',
     'name' => '',
+    'type' => '',
     'status' => '',
     'channel' => '',
     'volume' => '',
@@ -15,6 +16,7 @@ $appliance = [
 $errors = [
     'name' => "",
     'status' => "",
+    'type' => "",
     'channel' => "",
     'volume' => "",
     'TestNumber' => ""
@@ -35,5 +37,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 ?>
 
-<?php include '_form.php' ?>
+<?php include 'c_form.php' ?>
 

@@ -18,6 +18,7 @@ if (!$appliance) {
 $errors = [
     'name' => "",
     'status' => "",
+    'type' => "",
     'channel' => "",
     'volume' => "",
     'TestNumber' => ""

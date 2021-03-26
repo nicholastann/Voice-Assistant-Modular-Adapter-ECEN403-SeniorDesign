@@ -83,6 +83,12 @@ function validateappliance($appliance, &$errors)
         $errors['name'] = 'Name is mandatory';
     }
 
+    //type validations
+    if (!$appliance['type']) {
+        $isValid = false;
+        $errors['name'] = 'Type is mandatory';
+    }
+
     //status validations
     if (!$appliance['status']) {
         $isValid = false;
@@ -97,19 +103,32 @@ function validateappliance($appliance, &$errors)
         $errors['status'] = '';
     } 
 
-    //channel validations
-    if ($appliance['channel']) {
-        if (filter_var($appliance['channel'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>1, "max_range"=>1000))) === false) {
-            $isValid = false;
-            $errors['channel'] = 'Channel must be an integer between 1 and 1000';
+    //cv validations
+    if ($appliance['type'] === "tv") {
+        //channel validations
+        if ($appliance['channel']) {
+            if (filter_var($appliance['channel'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>1, "max_range"=>1000))) === false) {
+                $isValid = false;
+                $errors['channel'] = 'Channel must be an integer between 1 and 1000';
+            }
+        }
+
+        //volume validations
+        if ($appliance['volume']) {
+            if (filter_var($appliance['volume'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>0, "max_range"=>100))) === false) {
+                $isValid = false;
+                $errors['volume'] = 'Volume must be an integer between 0 and 100';
+            }
         }
     }
-
-    //volume validations
-    if ($appliance['volume']) {
-        if (filter_var($appliance['volume'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>0, "max_range"=>100))) === false) {
+    else {
+        if ($appliance['volume']) {
             $isValid = false;
-            $errors['volume'] = 'Volume must be an integer between 0 and 100';
+            $errors['volume'] = 'Volume should be NULL';
+        }
+        if ($appliance['channel']) {
+            $isValid = false;
+            $errors['channel'] = 'Channel should be NULL';
         }
     }
     return $isValid;

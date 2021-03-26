@@ -2,6 +2,7 @@
     {
         "id": 1,
         "name": "TV 1",
+        "type": "tv",
         "status": "1",
         "channel": "1",
         "volume": "10",
@@ -10,14 +11,16 @@
     {
         "id": 2,
         "name": "Motor Test 1",
+        "type": "lock",
         "status": "1",
-        "channel": "5",
-        "volume": "10",
+        "channel": "",
+        "volume": "",
         "TestNumber": "0"
     },
     {
         "id": 3,
         "name": "Motor Test 2",
+        "type": "switch",
         "status": "1",
         "channel": "",
         "volume": "",
@@ -26,6 +29,7 @@
     {
         "id": 4,
         "name": "TV 2",
+        "type": "tv",
         "status": "0",
         "channel": "46",
         "volume": "50",
@@ -34,6 +38,7 @@
     {
         "id": 5,
         "name": "Front Lock",
+        "type": "lock",
         "status": "1",
         "channel": "",
         "volume": "",

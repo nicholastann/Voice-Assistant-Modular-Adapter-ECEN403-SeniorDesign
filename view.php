@@ -31,6 +31,10 @@ if (!$appliance) {
             <table class="table" style="color:#fff">
                 <tbody>
                 <tr>
+                    <th>Type:</th>
+                    <td><?php echo $appliance['type'] ?></td>
+                </tr>
+                <tr>
                     <th>ID:</th>
                     <td><?php echo $appliance['id'] ?></td>
                 </tr>
@@ -39,15 +43,15 @@ if (!$appliance) {
                     <td><?php echo $appliance['name'] ?></td>
                 </tr>
                 <tr>
-                    <th>status:</th>
+                    <th>Status:</th>
                     <td><?php echo $appliance['status'] ?></td>
                 </tr>
                 <tr>
-                    <th>channel:</th>
+                    <th>Channel:</th>
                     <td><?php echo $appliance['channel'] ?></td>
                 </tr>
                 <tr>
-                    <th>volume:</th>
+                    <th>Volume:</th>
                     <td><?php echo $appliance['volume'] ?></td>
                 </tr>
                 <tr>
