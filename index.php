@@ -45,8 +45,8 @@ include 'partials/header.php';
             <?php endforeach;; ?>
             </tbody>
 
-            <h2 style="color:white; text-align:center;">Locks</h2>
             <table class="table" style="color:#fff">
+            <h2 style="color:white; text-align:center;">Locks</h2>
             <thead>
             <tr>
                 <th>ID</th>
@@ -77,8 +77,8 @@ include 'partials/header.php';
             <?php endforeach;; ?>
             </tbody>
 
-            <h2 style="color:white; text-align:center;">Light Switches</h2>
             <table class="table" style="color:#fff">
+            <h2 style="color:white; text-align:center;">Light Switches</h2>
             <thead>
             <tr>
                 <th>ID</th>
