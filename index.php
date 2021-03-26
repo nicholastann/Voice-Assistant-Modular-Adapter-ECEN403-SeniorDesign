@@ -7,9 +7,8 @@ include 'partials/header.php';
 ?>
 
 <body style="background-color:#101020;">
-    <h1 style="color:white; text-align:center;">VAMA Appliance Dashboard</h1>
     <div class="container">
-    <h2 style="color:white; text-align:center;">TVs</h2>
+    <h1 style="color:white; text-align:center;">TVs</h1>
         <table class="table" style="color:#fff">
             <thead>
             <tr>
@@ -46,7 +45,7 @@ include 'partials/header.php';
             </tbody>
 
             <table class="table" style="color:#fff">
-            <h2 style="color:white; text-align:center;">Locks</h2>
+            <h1 style="color:white; text-align:center;">Locks</h1>
             <thead>
             <tr>
                 <th>ID</th>
@@ -78,7 +77,7 @@ include 'partials/header.php';
             </tbody>
 
             <table class="table" style="color:#fff">
-            <h2 style="color:white; text-align:center;">Light Switches</h2>
+            <h1 style="color:white; text-align:center;">Light Switches</h1>
             <thead>
             <tr>
                 <th>ID</th>
