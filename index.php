@@ -80,6 +80,7 @@ include 'partials/header.php';
             <h1 style="color:white; text-align:center;">Light Switches</h1>
             <thead>
             <tr>
+                <th>Photo</th>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Status</th>
@@ -91,6 +92,12 @@ include 'partials/header.php';
             <?php foreach ($appliances as $appliance): ?>
                 <?php if ($appliance["type"] === "switch"): ?>
                     <tr>
+                        <td>
+                            <form action="/action_page.php">
+                                <input type="file" id="myFile" name="filename">
+                                <input type="submit">
+                            </form>
+                        </td>
                         <td><?php echo $appliance['id'] ?></td>
                         <td><?php echo $appliance['name'] ?></td>
                         <td><?php echo $appliance['status'] ?></td>
