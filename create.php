@@ -10,7 +10,6 @@ $appliance = [
     'status' => '',
     'channel' => '',
     'volume' => '',
-    'TestNumber' => ''
 ];
 
 $errors = [
@@ -19,7 +18,6 @@ $errors = [
     'type' => "",
     'channel' => "",
     'volume' => "",
-    'TestNumber' => ""
 ];
 $isValid = true;
 

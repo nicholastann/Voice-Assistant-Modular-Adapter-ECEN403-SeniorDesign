@@ -5,8 +5,7 @@
         "type": "tv",
         "status": "1",
         "channel": "1",
-        "volume": "10",
-        "TestNumber": "0"
+        "volume": "10"
     },
     {
         "id": 2,
@@ -14,8 +13,7 @@
         "type": "lock",
         "status": "1",
         "channel": "",
-        "volume": "",
-        "TestNumber": "0"
+        "volume": ""
     },
     {
         "id": 3,
@@ -23,8 +21,7 @@
         "type": "switch",
         "status": "1",
         "channel": "",
-        "volume": "",
-        "TestNumber": "0"
+        "volume": ""
     },
     {
         "id": 4,
@@ -32,8 +29,7 @@
         "type": "tv",
         "status": "0",
         "channel": "46",
-        "volume": "50",
-        "TestNumber": "0"
+        "volume": "50"
     },
     {
         "id": 5,
@@ -41,8 +37,7 @@
         "type": "lock",
         "status": "1",
         "channel": "",
-        "volume": "",
-        "TestNumber": "0"
+        "volume": ""
     }
 
 ]

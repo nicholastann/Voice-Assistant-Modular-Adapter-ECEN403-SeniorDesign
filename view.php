@@ -54,10 +54,6 @@ if (!$appliance) {
                     <th>Volume:</th>
                     <td><?php echo $appliance['volume'] ?></td>
                 </tr>
-                <tr>
-                    <th>Test Number:</th>
-                    <td><?php echo $appliance['TestNumber'] ?></td>
-                </tr>
                 </tbody>
             </table>
         </div>

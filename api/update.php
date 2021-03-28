@@ -8,7 +8,6 @@
     $applianceStatus = $data_back->{"status"};
     $applianceChannel = $data_back->{"channel"};
     $applianceVolume = $data_back->{"volume"};
-    $applianceTestNumber = $data_back->{"TestNumber"};
 
     $appliance = [
         'id' => $applianceId,
@@ -16,8 +15,7 @@
         'type' => $applianceType,
         'status' => $applianceStatus,
         'channel' => $applianceChannel,
-        'volume' => $applianceVolume,
-        'TestNumber' => $applianceTestNumber
+        'volume' => $applianceVolume
     ];
     
     $errors = [
@@ -25,8 +23,7 @@
         'status' => "",
         'type' => "",
         'channel' => "",
-        'volume' => "",
-        'TestNumber' => ""
+        'volume' => ""
     ];
     
     $appliance = array_merge($appliance, $_POST);

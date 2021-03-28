@@ -8,7 +8,6 @@
     $applianceStatus = $data_back->{"status"};
     $applianceChannel = $data_back->{"channel"};
     $applianceVolume = $data_back->{"volume"};
-    $applianceTestNumber = $data_back->{"TestNumber"};
 
     $appliance = [
         'id' => $applianceId,
@@ -24,8 +23,7 @@
         'status' => "",
         'type' => "",
         'channel' => "",
-        'volume' => "",
-        'TestNumber' => ""
+        'volume' => ""
     ];
 
     $isValid = validateappliance($appliance, $errors);
