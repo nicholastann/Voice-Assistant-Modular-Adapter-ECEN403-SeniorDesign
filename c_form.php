@@ -28,9 +28,7 @@
 
                     <div class="form-group">
                         <label>Type</label>
-                        <input name="type" value="<?php echo $appliance['type'] ?>"
-                            class="form-control  <?php echo $errors['type'] ? 'is-invalid' : '' ?>">
-                            <select>
+                            <select name="type" class="form-control" <?php echo $errors['type'] ? 'is-invalid' : '' ?>">>
                                 <option>tv</option>
                                 <option>lock</option>
                                 <option>switch</option>
