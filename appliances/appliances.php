@@ -27,6 +27,7 @@ function createappliance($data) {
     }
 
     $data['id'] = $newId;
+    $data['TestNumber'] = $appliances[1]['TestNumber'];
     $appliances[$newId] = $data;
 
     putJson($appliances);
