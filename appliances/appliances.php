@@ -16,19 +16,18 @@ function getapplianceById($id)
     return null;
 }
 
-function createappliance($data)
-{
+function createappliance($data) {
     $appliances = getappliances();
 
     $newId = 1;
-    $applianceExist = getapplianceByID($newID);
-    while ($applianceExist) {
-        $newId = $newId + 1;
-        $applianceExist = getapplianceByID($newID);
+    foreach ($appliances as $appliance) {
+        if ($appliance['id'] == $newId) {
+            $newId = $newId + 1;
+        }
     }
 
-    $data['id'] = $newID;
-    $appliances[] = $data;
+    $data['id'] = $newId;
+    $appliances[$newId] = $data;
 
     putJson($appliances);
 
