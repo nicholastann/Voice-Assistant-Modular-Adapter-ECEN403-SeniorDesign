@@ -25,19 +25,20 @@
                         </div>
                     </div>
 
+
                     <div class="form-group">
                         <label>Type</label>
-                        <select name="formGender" class="form-control <?php echo $errors['type'] ? 'is-invalid' : '' ?>">
-                            <option value="<?php echo $appliance['type'] ?>">tv</option>
-                            <option value="<?php echo $appliance['type'] ?>">lock</option>
-                            <option value="<?php echo $appliance['type'] ?>">switch</option>
-                        </select>
+                        <input name="type" value="<?php echo $appliance['type'] ?>"
+                            class="form-control  <?php echo $errors['type'] ? 'is-invalid' : '' ?>">
+                            <select>
+                                <option>tv</option>
+                                <option>lock</option>
+                                <option>switch</option>
+                            </select>
                         <div class="invalid-feedback">
-                            <?php echo  $errors['type'] ?>
+                            <?php echo  $errors['channel'] ?>
                         </div>
-                        
                     </div>
-
 
                     <div class="form-group">
                         <label>Channel</label>
