@@ -80,7 +80,6 @@ include 'partials/header.php';
             <h1 style="color:white; text-align:center;">Light Switches</h1>
             <thead>
             <tr>
-                <th>Photo</th>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Status</th>
@@ -92,25 +91,6 @@ include 'partials/header.php';
             <?php foreach ($appliances as $appliance): ?>
                 <?php if ($appliance["type"] === "switch"): ?>
                     <tr>
-                        <td>
-                        <form action="fileupload.php" enctype="multipart/form-data" method="post">
-                            Select image :
-                            <input type="file" name="file"><br/>
-                            <input type="submit" value="Upload" name="Submit1"> <br/>
-                            </form>
-                            <?php
-                                if(isset($_POST['Submit1'])) { 
-                                    $filepath = "images/" . $_FILES["file"]["name"];
-
-                                    if(move_uploaded_file($_FILES["file"]["tmp_name"], $filepath)) {
-                                        echo "<img src=".$filepath." height=200 width=300 />";
-                                    } 
-                                    else {
-                                        echo "Error !!";
-                                    }
-                                } 
-                            ?>
-                        </td>
                         <td><?php echo $appliance['id'] ?></td>
                         <td><?php echo $appliance['name'] ?></td>
                         <td><?php echo $appliance['status'] ?></td>
