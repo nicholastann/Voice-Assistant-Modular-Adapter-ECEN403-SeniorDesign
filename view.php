@@ -46,6 +46,7 @@ if (!$appliance) {
                     <th>Status:</th>
                     <td><?php echo $appliance['status'] ?></td>
                 </tr>
+                <?php if ($appliance['type'] === "tv"): ?>
                 <tr>
                     <th>Channel:</th>
                     <td><?php echo $appliance['channel'] ?></td>
@@ -54,6 +55,7 @@ if (!$appliance) {
                     <th>Volume:</th>
                     <td><?php echo $appliance['volume'] ?></td>
                 </tr>
+                <?php endif ?>
                 </tbody>
             </table>
         </div>
