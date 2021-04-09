@@ -49,8 +49,8 @@ include 'partials/header.php';
 </body>
 <nav class="navbar">
   <a href="index.php"><i class="fa fa-fw fa-home"></i></a>
-  <a class="active" href=""><i class="fa fa-lock"></i></a>
   <a href="light.php"><i class="fa fa-lightbulb-o"></i></a>
+  <a class="active" href=""><i class="fa fa-lock"></i></a>
   <a href="tv.php"><i class="fa fa-tv"></i></a>
 </nav>
 
