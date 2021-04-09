@@ -45,11 +45,11 @@ if (!$appliance) {
                 <tr>
                     <th>Status:</th>
                     <?php if ($appliance['type'] === 'lock'): ?> 
-                        <?php if ($appliance['status'] === '1'): ?> Locked   <?php endif ?>
-                        <?php if ($appliance['status'] === '0'): ?> Unlocked  <?php endif ?>
+                        <?php if ($appliance['status'] === '1'): ?> <td>Locked</td>   <?php endif ?>
+                        <?php if ($appliance['status'] === '0'): ?><td> Unlocked </td> <?php endif ?>
                     <?php else: ?>
-                        <?php if ($appliance['status'] === '1'): ?> On   <?php endif ?>
-                        <?php if ($appliance['status'] === '0'): ?> Off  <?php endif ?>
+                        <?php if ($appliance['status'] === '1'): ?> <td>On </td>  <?php endif ?>
+                        <?php if ($appliance['status'] === '0'): ?><td> Off </td> <?php endif ?>
                     <?php endif ?>
                 </tr>
                 <?php if ($appliance['type'] === "tv"): ?>
