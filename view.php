@@ -31,7 +31,7 @@ if (!$appliance) {
             <table class="table" style="color:#fff">
                 <tbody>
                 <tr>
-                    <th>Type:</th>
+                    <th>Appliance Type:</th>
                     <td><?php echo $appliance['type'] ?></td>
                 </tr>
                 <tr>
@@ -44,7 +44,13 @@ if (!$appliance) {
                 </tr>
                 <tr>
                     <th>Status:</th>
-                    <td><?php echo $appliance['status'] ?></td>
+                    <?php if ($appliance['type'] === 'lock'): ?> 
+                        <?php if ($appliance['status'] === '1'): ?> Locked   <?php endif ?>
+                        <?php if ($appliance['status'] === '0'): ?> Unlocked  <?php endif ?>
+                    <?php else: ?>
+                        <?php if ($appliance['status'] === '1'): ?> On   <?php endif ?>
+                        <?php if ($appliance['status'] === '0'): ?> Off  <?php endif ?>
+                    <?php endif ?>
                 </tr>
                 <?php if ($appliance['type'] === "tv"): ?>
                 <tr>
