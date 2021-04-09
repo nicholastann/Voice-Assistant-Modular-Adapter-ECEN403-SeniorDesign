@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Status</label>
+                        <label>Status (1 for On/locked, 0 for Off/Unlocked)</label>
                         <input name="status" value="<?php echo $appliance['status'] ?>"
                             class="form-control  <?php echo $errors['status'] ? 'is-invalid' : '' ?>">
                         <div class="invalid-feedback">
