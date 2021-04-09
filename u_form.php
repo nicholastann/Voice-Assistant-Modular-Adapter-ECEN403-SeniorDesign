@@ -53,9 +53,9 @@
 </body>
 
 <nav class="navbar">
-  <a href="index.php"><i class="fa fa-fw fa-home"></i></a>
+  <a href="index.php"><i class="fa fa-fw fa-home"></i>
+  </a><a href="light.php"><i class="fa fa-lightbulb-o"></i></a>
   <a href="lock.php"><i class="fa fa-lock"></i></a>
-  <a href="light.php"><i class="fa fa-lightbulb-o"></i></a>
   <a href=""><i class="fa fa-tv"></i></a>
 </nav>
 
