@@ -25,7 +25,10 @@ include 'partials/header.php';
                     <tr>
                         <td><?php echo $appliance['id'] ?></td>
                         <td><?php echo $appliance['name'] ?></td>
-                        <td><?php echo $appliance['status'] ?></td>
+                        <td>
+                            <?php if ($appliance['status']) ?> Locked   <?php endif ?>
+                            <?php if ($appliance['status']) ?> Unlocked <?php endif ?>
+                        </td>
                         <td>
                             <a href="view.php?id=<?php echo $appliance['id'] ?>" style="background-color:#088292; color:#ffffff;" class="btn btn-sm btn-outline-info">View</a>
                             <a href="update.php?id=<?php echo $appliance['id'] ?>" class="btn btn-sm btn-outline-secondary" style="background-color:#555555; color:#ffffff;">Update</a>
@@ -56,7 +59,10 @@ include 'partials/header.php';
                     <tr>
                         <td><?php echo $appliance['id'] ?></td>
                         <td><?php echo $appliance['name'] ?></td>
-                        <td><?php echo $appliance['status'] ?></td>
+                        <td>
+                            <?php if ($appliance['status']) ?> On   <?php endif ?>
+                            <?php if ($appliance['status']) ?> Off  <?php endif ?>
+                        </td>
                         <td>
                             <a href="view.php?id=<?php echo $appliance['id'] ?>" style="background-color:#088292; color:#ffffff;" class="btn btn-sm btn-outline-info">View</a>
                             <a href="update.php?id=<?php echo $appliance['id'] ?>" class="btn btn-sm btn-outline-secondary" style="background-color:#555555; color:#ffffff;">Update</a>
@@ -89,7 +95,10 @@ include 'partials/header.php';
                     <tr>
                         <td><?php echo $appliance['id'] ?></td>
                         <td><?php echo $appliance['name'] ?></td>
-                        <td><?php echo $appliance['status'] ?></td>
+                        <td>
+                            <?php if ($appliance['status']) ?> On   <?php endif ?>
+                            <?php if ($appliance['status']) ?> Off  <?php endif ?>
+                        </td>
                         <td><?php echo $appliance['channel'] ?></td>
                         <td><?php echo $appliance['volume'] ?></td>
                         <td>
