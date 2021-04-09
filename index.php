@@ -26,8 +26,8 @@ include 'partials/header.php';
                         <td><?php echo $appliance['id'] ?></td>
                         <td><?php echo $appliance['name'] ?></td>
                         <td>
-                            <?php if ($appliance['status'] === 1) ?> Locked   <?php endif ?>
-                            <?php if ($appliance['status'] === 0) ?> Unlocked <?php endif ?>
+                            <?php if ($appliance["status"] === "1"): ?> Locked   <?php endif ?>
+                            <?php if ($appliance['status'] === "0"): ?> Unlocked <?php endif ?>
                         </td>
                         <td>
                             <a href="view.php?id=<?php echo $appliance['id'] ?>" style="background-color:#088292; color:#ffffff;" class="btn btn-sm btn-outline-info">View</a>
@@ -60,8 +60,8 @@ include 'partials/header.php';
                         <td><?php echo $appliance['id'] ?></td>
                         <td><?php echo $appliance['name'] ?></td>
                         <td>
-                            <?php if ($appliance['status'] === 1) ?> On   <?php endif ?>
-                            <?php if ($appliance['status'] === 0) ?> Off  <?php endif ?>
+                            <?php if ($appliance['status'] === '1'): ?> On   <?php endif ?>
+                            <?php if ($appliance['status'] === '0'): ?> Off  <?php endif ?>
                         </td>
                         <td>
                             <a href="view.php?id=<?php echo $appliance['id'] ?>" style="background-color:#088292; color:#ffffff;" class="btn btn-sm btn-outline-info">View</a>
@@ -96,8 +96,8 @@ include 'partials/header.php';
                         <td><?php echo $appliance['id'] ?></td>
                         <td><?php echo $appliance['name'] ?></td>
                         <td>
-                            <?php if ($appliance['status'] === 1) ?> On   <?php endif ?>
-                            <?php if ($appliance['status'] === 0) ?> Off  <?php endif ?>
+                            <?php if ($appliance['status'] === '1'): ?> On   <?php endif ?>
+                            <?php if ($appliance['status'] === '0'): ?> Off  <?php endif ?>
                         </td>
                         <td><?php echo $appliance['channel'] ?></td>
                         <td><?php echo $appliance['volume'] ?></td>

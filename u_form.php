@@ -27,7 +27,7 @@
 
                     <?php if ($appliance['type'] === "tv"): ?>
                         <div class="form-group">
-                            <label>Channel</label>
+                            <label>Channel (1 - 1000)</label>
                             <input name="channel" value="<?php echo $appliance['channel'] ?>"
                                 class="form-control  <?php echo $errors['channel'] ? 'is-invalid' : '' ?>">
                             <div class="invalid-feedback">
@@ -36,7 +36,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Volume</label>
+                            <label>Volume (0 - 100)</label>
                             <input name="volume" value="<?php echo $appliance['volume'] ?>"
                                 class="form-control  <?php echo $errors['volume'] ? 'is-invalid' : '' ?>">
                             <div class="invalid-feedback">
