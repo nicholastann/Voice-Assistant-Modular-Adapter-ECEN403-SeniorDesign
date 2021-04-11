@@ -33,7 +33,7 @@
                             <select name="type" class="form-control" <?php echo $errors['type'] ? 'is-invalid' : '' ?>">>
                                 <option>tv</option>
                                 <option>lock</option>
-                                <option>switch</option>
+                                <option>light</option>
                             </select>
                         <div class="invalid-feedback">
                             <?php echo  $errors['channel'] ?>

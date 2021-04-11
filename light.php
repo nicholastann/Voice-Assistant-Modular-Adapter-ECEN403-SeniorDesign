@@ -20,7 +20,7 @@ include 'partials/header.php';
             </thead>
             <tbody>
             <?php foreach ($appliances as $appliance): ?>
-                <?php if ($appliance["type"] === "switch"): ?>
+                <?php if ($appliance["type"] === "light"): ?>
                     <tr>
                         <td><?php echo $appliance['id'] ?></td>
                         <td><?php echo $appliance['name'] ?></td>
