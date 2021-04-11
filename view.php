@@ -18,6 +18,7 @@ if (!$appliance) {
 <body style="background-color:#101020;">
     <div style="background-color:#101020; color:#ffffff;" class="container">
         <div style="background-color:#101020;" class="card">
+        <button onclick="window.history.back();">Go Back</button>
             <div class="card-header">
                 <h3>View appliance: <b><?php echo $appliance['name'] ?></b></h3>
             </div>

@@ -28,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($isValid) {
         $appliance = createappliance($appliance);
-
-        header("Location: index.php");
+        $location = "Location: " + $appliance['type'] + ".php";
+        header($location);
     }
 }
 

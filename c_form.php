@@ -1,5 +1,6 @@
 <body style="background-color:#101020;">
     <div style="background-color:#101020; color:#ffffff;" class="container">
+        <button onclick="window.history.back();">Go Back</button>
         <div style="background-color:#101020; class="card">
             <div class="card-header">
                 <h3> Create new appliance </h3>
