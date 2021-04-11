@@ -26,9 +26,8 @@ include 'partials/header.php';
         <p style="color:white; text-align:center;"> 
         You can watch our demo video if you'd like to learn more. 
         </p>
-
-        <div align="center"> <iframe  style="width: 100%;" height="315" src="https://www.youtube.com/embed/l-owCyHujms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </div>
     </div>
+    <div align="center"> <iframe  style="width: 100%;" height="315" src="https://www.youtube.com/embed/l-owCyHujms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </div>
 </body>
 <nav class="navbar">
   <a class="active" href=""><i class="fa fa-fw fa-home"></i></a>
