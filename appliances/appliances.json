@@ -18,7 +18,7 @@
     {
         "id": 3,
         "name": "Motor Test 2",
-        "type": "switch",
+        "type": "light",
         "status": "1",
         "channel": "",
         "volume": ""
