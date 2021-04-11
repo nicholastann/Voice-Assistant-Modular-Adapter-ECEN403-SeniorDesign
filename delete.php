@@ -10,4 +10,7 @@ if (!isset($_POST['id'])) {
 $applianceId = $_POST['id'];
 deleteappliance($applianceId);
 
-header("Location: index.php");
+$a = "Location: ";
+$b = ".php";
+$location = $a.$appliance['type'].$b;
+header($location);

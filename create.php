@@ -28,7 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($isValid) {
         $appliance = createappliance($appliance);
-        $location = "Location: " + $appliance['type'] + ".php";
+        $a = "Location: ";
+        $b = ".php";
+        $location = $a.$appliance['type'].$b;
         header($location);
     }
 }
