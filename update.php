@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($isValid) {
         $appliance = updateappliance($_POST, $applianceId);
-
-        header("Location: index.php");
+        $location = "Location: " + $appliance['type'] + ".php";
+        header($location);
     }
 }
 
