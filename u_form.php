@@ -1,7 +1,7 @@
 <body style="background-color:#101020;">
     <div style="background-color:#101020; color:#ffffff;" class="container">
         <div style="background-color:#101020; class="card">
-            <button onclick="window.history.back();">Go Back</button>
+            <button onclick="window.history.back();" style="background-color:#088292; color:#ffffff;" class="btn btn-sm btn-outline-info">Go Back</button>
             <div class="card-header">
                 <h3>Update appliance <b><?php echo $appliance['name'] ?></b> </h3>
             </div> 
