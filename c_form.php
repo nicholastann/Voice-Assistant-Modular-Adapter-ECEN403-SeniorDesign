@@ -20,7 +20,7 @@
 
                     <div class="form-group">
                         <label>Status (1 for On/locked, 0 for Off/Unlocked)</label>
-                        <input name="status" value="<?php echo $appliance['status'] ?>"
+                        <input type="number" min="0" max="1" name="status" value="<?php echo $appliance['status'] ?>"
                             class="form-control  <?php echo $errors['status'] ? 'is-invalid' : '' ?>">
                         <div class="invalid-feedback">
                             <?php echo  $errors['status'] ?>
@@ -42,8 +42,8 @@
 
                     <div class="form-group">
                     TV ONLY
-                        <label>Channel (1 - 1000)</label>
-                        <input name="channel" value="<?php echo $appliance['channel'] ?>"
+                        <label>Channel</label>
+                        <input type="number" min="1" max="1000" name="channel" value="<?php echo $appliance['channel'] ?>"
                             class="form-control  <?php echo $errors['channel'] ? 'is-invalid' : '' ?>">
                         <div class="invalid-feedback">
                             <?php echo  $errors['channel'] ?>
@@ -52,8 +52,8 @@
 
                     <div class="form-group">
                     TV ONLY
-                        <label>Volume (0 - 100)</label>
-                        <input name="volume" value="<?php echo $appliance['volume'] ?>"
+                        <label>Volume</label>
+                        <input type="number" min="0" max="100" name="volume" value="<?php echo $appliance['volume'] ?>"
                             class="form-control  <?php echo $errors['volume'] ? 'is-invalid' : '' ?>">
                         <div class="invalid-feedback">
                             <?php echo  $errors['volume'] ?>
