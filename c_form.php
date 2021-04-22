@@ -71,7 +71,7 @@
   <a href="index.php"><i class="fa fa-fw fa-home"></i></a>
   <a href="light.php"><i class="fa fa-lightbulb-o"></i></a>
   <a href="lock.php"><i class="fa fa-lock"></i></a>
-  <a href=""><i class="fa fa-tv"></i></a>
+  <a href="tv.php"><i class="fa fa-tv"></i></a>
 </nav>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

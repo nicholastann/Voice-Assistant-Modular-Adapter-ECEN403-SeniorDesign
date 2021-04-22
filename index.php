@@ -30,7 +30,7 @@ include 'partials/header.php';
     <div align="center"> <iframe height="315" src="https://www.youtube.com/embed/l-owCyHujms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </div>
 </body>
 <nav class="navbar">
-  <a class="active" href=""><i class="fa fa-fw fa-home"></i></a>
+  <a class="active"><i class="fa fa-fw fa-home"></i></a>
   <a href="light.php"><i class="fa fa-lightbulb-o"></i></a>
   <a href="lock.php"><i class="fa fa-lock"></i></a>
   <a href="tv.php"><i class="fa fa-tv"></i></a>

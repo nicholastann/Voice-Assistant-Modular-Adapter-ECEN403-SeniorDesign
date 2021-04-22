@@ -55,7 +55,7 @@ include 'partials/header.php';
   <a href="index.php"><i class="fa fa-fw fa-home"></i></a>
   <a href="light.php"><i class="fa fa-lightbulb-o"></i></a>
   <a href="lock.php"><i class="fa fa-lock"></i></a>
-  <a class="active" href=""><i class="fa fa-tv"></i></a>
+  <a class="active"><i class="fa fa-tv"></i></a>
 </nav>
 
 <?php include 'partials/footer.php' ?>
