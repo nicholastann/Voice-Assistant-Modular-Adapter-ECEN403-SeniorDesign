@@ -6,6 +6,7 @@ $appliances = getappliances();
 include 'partials/header.php';
 ?>
 
+<meta http-equiv="refresh" content="1">
 <body style="background-color:#101020;">
     <div class="container">
         <table class="table" style="color:#fff">
